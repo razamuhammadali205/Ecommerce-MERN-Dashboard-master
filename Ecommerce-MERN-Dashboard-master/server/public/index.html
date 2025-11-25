@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SkinCeuticels Skincare</title>
+    <style>
+        /* Full Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #fff;
+            line-height: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font: inherit;
+            color: inherit;
+        }
+
+       
+        :root {
+            --brand-blue: #4cbbdd;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background-color: var(--brand-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 13px;
+            font-weight: 500;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .top-banner a {
+            color: #ffffff;
+            text-decoration: underline;
+            margin-left: 4px;
+            font-weight: 600;
+        }
+
+        .close-banner {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        /* Header */
+        .header {
+            background-color: #000000;
+            padding: 20px 0;
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* Logo - Now Image-Based */
+        .logo {
+            display: block;
+            height: 50px; /* Adjust based on your logo height */
+            width: auto;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            display: block;
+            margin-left: 44px;
+        }
+
+        /* Top Links */
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #aaaaaa;
+        }
+
+        .top-links a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+        }
+
+        .top-links a:hover {
+            color: var(--brand-blue);
+        }
+
+        .top-links .icon {
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .cart-link {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background-color: var(--brand-blue);
+            color: #000000;
+            font-size: 10px;
+            font-weight: 700;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        /* Main Navigation */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #aaaaaa;
+            flex: 1;
+            justify-content: center;
+            margin: 12px 0 8px;
+        }
+
+        .main-nav a {
+            transition: color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: var(--brand-blue);
+        }
+
+        .holiday-link {
+            color: var(--brand-blue) !important;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .holiday-link .icon {
+            font-size: 15px;
+        }
+
+        /* Search */
+        .search-container {
+            position: relative;
+            width: 220px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 11px 40px 11px 15px;
+            border: 1px solid #333333;
+            border-radius: 4px;
+            background-color: #1a1a1a;
+            color: #aaaaaa;
+            font-size: 13px;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input::placeholder {
+            color: #666666;
+            font-weight: 500;
+        }
+
+        .search-input:focus {
+            border-color: var(--brand-blue);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaaaaa;
+            font-size: 17px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease;
+        }
+
+        .search-btn:hover {
+            color: var(--brand-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .header-inner {
+                flex-direction: column;
+                padding: 0 20px;
+                gap: 12px;
+            }
+
+            .top-links {
+                order: 1;
+                width: 100%;
+                justify-content: center;
+                gap: 18px;
+            }
+
+            .logo {
+                order: 2;
+            }
+
+            .main-nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+                font-size: 13px;
+                margin: 10px 0;
+            }
+
+            .search-container {
+                order: 4;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-banner {
+                font-size: 12px;
+                padding: 6px 0;
+            }
+
+            .close-banner {
+                right: 15px;
+                font-size: 18px;
+            }
+
+            .logo {
+                height: 40px; /* Smaller on mobile */
+            }
+
+            .main-nav {
+                gap: 12px;
+                font-size: 12px;
+            }
+
+            .top-links {
+                gap: 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+    <!-- Added premium animations CSS -->
+    <link rel="stylesheet" href="/Ecommerce-MERN-Dashboard-master/server/public/css/premium-animations.css">
+</head>
+<body>
+
+     <!-- Top Banner -->
+    <div class="top-banner" style="color: #000000;">
+        USE CODE: <b style="color: #000000;">SC501</b> For Your First Order And Get 10% Discount
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <!-- LOGO IMAGE PLACEHOLDER -->
+            <a href="index.html" class="logo">
+                <img src="./images/logo.png" alt="MyBrand Logo">
+                
+            </a>
+
+            <!-- Top Right Links -->
+            <div class="top-links">
+                <a href="#">
+                    <span class="icon">$</span> US (EN)
+                </a>
+                <a href="professionals.html">
+                    <span class="icon">Location</span> Find a Professional
+                </a>
+                <a href="contact.html">Customer Service</a>
+                <a href="account.html">My Account</a>
+                <a href="cart.html" class="cart-link">
+                    <span class="icon">Cart</span> My Cart
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <a href="routine.html"><b>BUILD MY ROUTINE</b></a>
+                <a href="skincare.html"><b>SKINCARE</b></a>
+                <a href="bestsellers.html"><b>BEST SELLERS</b></a>
+                <a href="concerns.html"><b>SKIN CONCERNS</b></a>
+                <a href="learn.html"><b>LEARN</b></a>
+                <a href="services.html"><b>SERVICES</b></a>
+                <a href="about.html"><b>ABOUT US</b></a>
+                <a href="holiday.html" class="holiday-link">
+                    <span class="icon"><b>Gift</b></span> <b>HOLIDAY GIFT GUIDE</b>
+                </a>
+            </nav>
+
+            <!-- Search -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button class="search-btn" aria-label="Search">Search</button>
+            </div>
+        </div>
+    </header>
+
+  <!-- Hero -->
+  <section class="hero fade-up">
+    
+    <div style="position: absolute; left: 40px; top: 50%; transform: translateY(-50%); z-index: 10; max-width: 450px;">
+      <h1 style="
+        font-size: clamp(28px, 4vw, 48px);
+        font-weight: 900;
+        color: #fff;
+        margin: 0;
+        line-height: 1.3;
+        text-shadow: 
+          0 0 6px rgba(72, 181, 215, 0.6),
+          0 0 12px rgba(74, 144, 184, 0.4);
+        letter-spacing: -0.5px;
+        white-space: nowrap;
+      ">
+        All Skincare Products
+      </h1>
+      <p style="
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.95);
+        margin: 16px 0 0 0;
+        line-height: 1.6;
+        text-shadow: 
+          0 0 4px rgba(100, 196, 226, 0.4),
+          0 0 8px rgba(74, 144, 184, 0.2);
+      ">
+        SkinCeuticals' advanced skincare backed by science is designed to prevent signs of future damage, protect healthy skin, and correct the appearance of previous damage.
+      </p>
+    </div>
+    <img src="/heroimg.jpg" alt="Hero visual placeholder" style="width:100%;height:100%;display:block;" />
+  </section>
+
+
+<style>
+/* THIN PUFFY POUCH PROMO - NO UNIVERSAL, NO RESET */
+.puffy-promo-thin {
+    background-color: #111111;
+    padding: 50px 0;
+    overflow: hidden;
+}
+.puffy-container-thin {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.puffy-content-thin {
+    flex: 1;
+    min-width: 300px;
+    max-width: 480px;
+}
+.puffy-title-thin {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    color: #ffffff;
+    line-height: 1.2;
+}
+.puffy-text-thin {
+    font-size: 15px;
+    font-weight: 400;
+    color: #cccccc;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+.puffy-btn-thin {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 36px;
+    border: 2px solid #ffffff;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.puffy-btn-thin:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+.puffy-image-thin {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+.puffy-image-thin img {
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+@media (max-width: 992px) {
+    .puffy-container-thin {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+    }
+    .puffy-content-thin { max-width: 100%; }
+    .puffy-title-thin { font-size: 28px; }
+    .puffy-image-thin img { max-width: 320px; }
+}
+@media (max-width: 768px) {
+    .puffy-promo-thin { padding: 40px 0; }
+    .puffy-container-thin { padding: 0 20px; }
+    .puffy-title-thin { font-size: 24px; }
+    .puffy-btn-thin { padding: 11px 30px; font-size: 12px; }
+    .puffy-image-thin img { max-width: 280px; }
+}
+</style>
+
+<!-- THIN PUFFY POUCH PROMO - Paste after hero -->
+<section class="puffy-promo-thin">
+    <div class="puffy-container-thin">
+        <div class="puffy-content-thin">
+            <h2 class="puffy-title-thin">Complimentary Puffy Pouch</h2>
+            <p class="puffy-text-thin">
+                Protect your skincare essentials with our MyBrand Puffy Pouch, available on your first purchase when you join our SMS list.
+            </p>
+            <a href="contact.html" class="puffy-btn-thin">SIGN UP</a>
+        </div>
+        <div class="puffy-image-thin">
+            <img src="/pouch.png" alt="MyBrand Puffy Pouch">
+        </div>
+    </div>
+</section>
+
+<style>
+/* FIXED BESTSELLERS SECTION */
+.bestsellers-section {
+  background-color: #ffffff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.bestsellers-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.bestsellers-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+.bestsellers-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 16px;
+}
+
+.bestsellers-desc {
+  font-size: 15px;
+  color: #666666;
+  max-width: 800px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+.bestsellers-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2px;
+}
+
+.bestsellers-link:hover {
+  color: #4cbbdd;
+  border-color: #4cbbdd;
+}
+
+/* FIX: GRID FOR EQUAL WIDTH + HEIGHT */
+.bestsellers-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+.bestseller-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bestseller-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bestseller-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #4cbbdd;
+  color: #000000;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.bestseller-image {
+  width: 100%;
+  height: 260px;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bestseller-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* makes all product images fit perfectly */
+  display: block;
+}
+
+.bestseller-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.bestseller-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.bestseller-desc {
+  font-size: 13px;
+  color: #666666;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.bestseller-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #000000;
+}
+
+.bestseller-rating .stars {
+  color: #4cbbdd;
+  font-size: 14px;
+}
+
+.bestseller-size {
+  font-size: 13px;
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.bestseller-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+.bestseller-price del {
+  color: #999999;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+.bestseller-btn {
+  display: block;
+  background: #000000;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.bestseller-btn:hover {
+  background: #4cbbdd;
+}
+
+/* RESPONSIVE GRID */
+@media (max-width: 992px) {
+  .bestsellers-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .bestsellers-track {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<section class="bestsellers-section">
+  <div class="bestsellers-container">
+    <h2 class="bestsellers-title">Advanced Skincare Backed by Science</h2>
+    <p class="bestsellers-subtitle">From the #1 Medical Aesthetic Skincare Brand</p>
+    <p class="bestsellers-desc">
+      Research and innovation are at the core of the MyBrand mission. Our partnership with doctors and dedication to science have established the brand as a leader in advanced integrated skincare.
+    </p>
+    <a href="science.html" class="bestsellers-link">DISCOVER OUR SCIENCE</a>
+
+    <div class="bestsellers-track">
+      <!-- CARD 1 -->
+      <a href="pdp.html" style="text-decoration:none;color:inherit;">
+        <div class="bestseller-card">
+          <div class="bestseller-badge">BEST SELLER</div>
+          <div class="bestseller-image">
+            <img src="/m1.jpg" alt="C E Ferulic">
+          </div>
+          <div class="bestseller-info">
+            <div class="bestseller-name">C E Ferulic® with 15% L-Ascorbic Acid</div>
+            <div class="bestseller-desc">Vitamin C serum for fine lines and wrinkles</div>
+            <div class="bestseller-rating">
+              <span class="stars">★★★★★</span> 4.4 (9538) ▼
+            </div>
+            <div class="bestseller-size">One size available</div>
+            <div class="bestseller-size">30 ml</div>
+            <!-- Updated price from $185.00 to $135.00 -->
+            <div class="bestseller-price">$135.00</div>
+            <!-- Added onclick handler to add to cart -->
+            <button class="bestseller-btn" onclick="addProductToCart('ce-ferulic', 'C E Ferulic® with 15% L-Ascorbic Acid', 135.00, '/p1.jpg', 'SERUMS, VITAMIN C SERUMS')">ADD TO BAG</button>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 2 -->
+      <a href="product-hyaluronic-intensifier.html" style="text-decoration:none;color:inherit;">
+        <div class="bestseller-card">
+          <div class="bestseller-badge">BEST SELLER</div>
+          <div class="bestseller-image">
+            <img src="/m2.jpg" alt="SkinCeuticals H.A Intensifier">
+          </div>
+          <div class="bestseller-info">
+            <!-- Updated product name from Triple Lipid Restore to SkinCeuticals H.A Intensifier Set -->
+            <div class="bestseller-name">SkinCeuticals - H.A Intensifier Set – 4ml x 10pcs</div>
+            <div class="bestseller-desc">Travel-size set of 10 bottles hyaluronic acid serum</div>
+            <div class="bestseller-rating">
+              <span class="stars">★★★★★</span> 4.6 (3858) ▼
+            </div>
+            <div class="bestseller-size">One size available</div>
+            <!-- Updated size from 48ml to 4ml x 10pcs -->
+            <div class="bestseller-size">4ml x 10pcs</div>
+            <!-- Updated price from $155.00 to $60.00 -->
+            <div class="bestseller-price">$60.00</div>
+            <!-- Added onclick handler with correct product data -->
+            <button class="bestseller-btn" onclick="addProductToCart('ha-intensifier-set', 'SkinCeuticals - H.A Intensifier Set – 4ml x 10pcs', 60.00, '/p2.webp', 'UNCATEGORIZED')">ADD TO BAG</button>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 3 -->
+      <a href="product-ptiox.html" style="text-decoration:none;color:inherit;">
+        <div class="bestseller-card">
+          <div class="bestseller-badge">BEST SELLER</div>
+          <div class="bestseller-image">
+            <img src="/m7.webp" alt="P-TIOX">
+          </div>
+          <div class="bestseller-info">
+            <div class="bestseller-name">P-TIOX 30ml</div>
+            <div class="bestseller-desc">Peptide serum for expression lines and glass skin radiance</div>
+            <div class="bestseller-rating">
+              <span class="stars">★★★★★</span> 4.5 (1218) ▼
+            </div>
+            <div class="bestseller-size">One size available</div>
+            <div class="bestseller-size">30 ml</div>
+            <!-- Updated price from $150.00 to $140.00 -->
+            <div class="bestseller-price">$140.00</div>
+            <!-- Added onclick handler to add to cart -->
+            <button class="bestseller-btn" onclick="addProductToCart('ptiox', 'P-TIOX 30ml', 140.00, '/p3.jpg', 'ANTI-AGING CREAMS, SERUMS')">ADD TO BAG</button>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 4 -->
+      <a href="product-discovery-set.html" style="text-decoration:none;color:inherit;">
+        <div class="bestseller-card">
+          <div class="bestseller-badge">12% SAVINGS</div>
+          <div class="bestseller-image">
+            <img src="/m8.jpg" alt="Best Sellers Discovery Set">
+          </div>
+          <div class="bestseller-info">
+            <div class="bestseller-name">Best Sellers Discovery Set</div>
+            <div class="bestseller-desc">Worth $490. Limited edition set now updated to include C E Ferulic®, Triple Lipid Restore 2:4:2.</div>
+            <div class="bestseller-rating">
+              <span class="stars">★★★★★</span> 4.4 (14718) ▼
+            </div>
+            <!-- Updated sale price from $431.00 to $400.00 -->
+            <div class="bestseller-price"><del>$490.00</del> $400.00</div>
+            <!-- Added onclick handler to add to cart -->
+            <button class="bestseller-btn" onclick="addProductToCart('discovery-set', 'Best Sellers Discovery Set', 400.00, '/p4.webp', 'KITS & SETS')">BUY THE ROUTINE</button>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<style>
+/* PROFESSIONAL SERVICES - USING NEW BLUE */
+.services-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+}
+.services-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.services-shop-btn {
+    display: inline-block;
+    border: 1px solid #000000;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 32px;
+    margin-bottom: 60px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.services-shop-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+.services-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 12px;
+}
+.services-subtitle {
+    font-size: 15px;
+    color: #666666;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    line-height: 1.6;
+}
+.services-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.service-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    text-align: left;
+}
+.service-image {
+    height: 240px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.service-name {
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+.service-type {
+    font-size: 18px;
+    font-weight: 300;
+    color: #000000;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.service-desc {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.6;
+}
+@media (max-width: 992px) {
+    .services-grid { gap: 24px; }
+    .service-card { max-width: 340px; }
+}
+@media (max-width: 768px) {
+    .services-title { font-size: 30px; }
+    .services-subtitle { font-size: 14px; margin-bottom: 40px; }
+    .services-shop-btn { margin-bottom: 40px; padding: 10px 28px; }
+    .service-card { min-width: 280px; }
+    .service-image { height: 200px; }
+}
+</style>
+
+<!-- PROFESSIONAL SERVICES - USING NEW BLUE -->
+<section class="services-section">
+    <div class="services-container">
+        <a href="bestsellers.html" class="services-shop-btn">SHOP BEST SELLERS</a>
+
+        <h2 class="services-title">Connect with a Professional to Build Your Routine</h2>
+        <p class="services-subtitle">
+            Discover MyBrand advanced skincare services to build your integrated at-home and in-office routine.
+        </p>
+
+        <div class="services-grid">
+            <!-- CARD 1 -->
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="/c1.webp" alt="Virtual Consultation">
+                </div>
+                <div class="service-name">Integrated SkinConcierge</div>
+                <div class="service-type">1:1 Virtual Consultation</div>
+                <p class="service-desc">
+                    Get access to a private video chat with a licensed aesthetician for all your skincare questions.
+                </p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="/c2.jpg" alt="Routine Builder">
+                </div>
+                <div class="service-name">Integrated SkinConcierge</div>
+                <div class="service-type">Routine Builder</div>
+                <p class="service-desc">
+                    Evaluate your unique skin needs to receive a personalized MyBrand routine.
+                </p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="/c3.webp" alt="In-Office Professional">
+                </div>
+                <div class="service-name">Visit a Skincare Professional</div>
+                <p class="service-desc">
+                    Locate our flagship clinics or other providers for in-person services and advice.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+/* SPLIT LAYOUT - TEXT LEFT, IMAGE RIGHT - CLEAN & EQUAL */
+:root {
+    --brand-blue: #4cbbdd;
+}
+
+.split-section {
+    background-color: #000000;
+    padding: 80px 0;
+}
+.split-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.split-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+.split-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+.split-subtitle {
+    font-size: 22px;
+    font-weight: 300;
+    color: #f5f5f5;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+.split-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.split-btn:hover {
+    background-color: var(--brand-blue);
+}
+.split-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.split-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+@media (max-width: 992px) {
+    .split-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .split-content, .split-image {
+        max-width: 100%;
+    }
+    .split-title {
+        font-size: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .split-section {
+        padding: 60px 0;
+    }
+    .split-container {
+        padding: 0 20px;
+    }
+    .split-title {
+        font-size: 26px;
+    }
+    .split-btn {
+        padding: 11px 28px;
+        font-size: 12px;
+    }
+}
+</style>
+
+<!-- SPLIT LAYOUT: TEXT LEFT, IMAGE RIGHT -->
+<section class="split-section">
+    <div class="split-container">
+        <!-- LEFT: TEXT CONTENT -->
+        <div class="split-content">
+            <h2 class="split-title">The #1 Medical Aesthetic Skincare Brand Worldwide</h2>
+            <p class="split-subtitle">
+                Partnered with over 10,000 premium clinics and top medical doctors, our work leads the skincare industry through innovation, scientific research, and clinical lab testing.            </p>
+            <a href="learn.html" class="split-btn">LEARN MORE</a>
+        </div>
+
+        <!-- RIGHT: IMAGE -->
+        <div class="split-image">
+            <img src="/sp1.webp" alt="Advanced Skincare Science">
+            
+        </div>
+    </div>
+</section>
+
+<style>
+/* SPLIT LAYOUT 2 - TEXT LEFT, IMAGE RIGHT - CLEAN & EQUAL */
+:root {
+    --brand-blue: #4cbbdd;
+}
+
+.split-section-2 {
+    background-color: #f8f8f8;
+    padding: 80px 0;
+}
+.split-container-2 {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.split-content-2 {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+.split-title-2 {
+    font-size: 36px;
+    font-weight: 7000;
+    color: #000000;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+.split-subtitle-2 {
+    font-size: 20px;
+    font-weight: 300;
+    color: #666666;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.split-image-2 {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.split-image-2 img {
+    width: 120%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+@media (max-width: 992px) {
+    .split-container-2 {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .split-content-2, .split-image-2 {
+        max-width: 100%;
+    }
+    .split-title-2 {
+        font-size: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .split-section-2 {
+        padding: 60px 0;
+    }
+    .split-container-2 {
+        padding: 0 20px;
+    }
+    .split-title-2 {
+        font-size: 26px;
+    }
+    .split-btn-2 {
+        padding: 11px 28px;
+        font-size: 12px;
+    }
+}
+</style>
+
+<!-- SPLIT LAYOUT 2: TEXT LEFT, IMAGE RIGHT -->
+<section class="split-section-2">
+    <div class="split-container-2">
+        <!-- LEFT: TEXT CONTENT -->
+        <div class="split-content-2">
+            <h2 class="split-title-2">Find a Skincare Professional</h2>
+            <p class="split-subtitle-2">
+                Whether you're targeting aging, acne, or hydration, our dermatologist-developed solutions and skincares are tailored to your unique needs with proven efficacy.
+            </p>
+        </div>
+
+        <!-- RIGHT: IMAGE -->
+        <div class="split-image-2">
+            <img src="/sp2.jpg" alt="Personalized Skincare">
+            
+        </div>
+    </div>
+</section>
+
+<style>
+/* IN-OFFICE + AT-HOME - FINAL: TEXT LEFT, IMAGES + LABELS BELOW */
+:root {
+    --brand-blue: #4cbbdd;
+}
+
+.pairing-section {
+    background-color: #000000;
+    padding: 80px 0;
+}
+.pairing-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.pairing-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.pairing-labels {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.pairing-labels .plus {
+    font-size: 22px;
+    font-weight: 300;
+}
+.pairing-title {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 32px;
+}
+.pairing-images {
+    flex: 1;
+    min-width: 350px;
+    max-width: 600px;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    justify-content: center;
+}
+.pairing-image {
+    flex: 1;
+    max-width: 350px;
+}
+.pairing-image img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+.pairing-product {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+.pairing-product img {
+    width: 200%;
+    max-width: 280px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.pairing-text-labels {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.pairing-text-labels span {
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ffffff;
+}
+@media (max-width: 992px) {
+    .pairing-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .pairing-labels {
+        justify-content: center;
+    }
+    .pairing-text-labels {
+        justify-content: center;
+        gap: 40px;
+    }
+    .pairing-images {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+@media (max-width: 768px) {
+    .pairing-section {
+        padding: 60px 0;
+    }
+    .pairing-container {
+        padding: 0 20px;
+    }
+    .pairing-title {
+        font-size: 28px;
+        text-align: center;
+    }
+    .pairing-labels {
+        font-size: 14px;
+        gap: 12px;
+    }
+    .pairing-labels .plus {
+        font-size: 20px;
+    }
+    .pairing-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+    .pairing-text-labels {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        margin-top: 20px;
+    }
+}
+</style>
+
+<!-- IN-OFFICE + AT-HOME: TITLE LEFT, IMAGES + TEXT BELOW -->
+<section class="pairing-section">
+    <div class="pairing-container">
+        <!-- LEFT: TEXT CONTENT -->
+        <div class="pairing-content">
+            <!-- Top Labels -->
+            <div class="pairing-labels">
+                <span>In-Office</span>
+                <span class="plus">+</span>
+                <span>At-Home</span>
+            </div>
+
+            <!-- Title -->
+            <h2 class="pairing-title">Pair Your In-Office Treatments with At-Home Products</h2>
+        </div>
+
+        <!-- RIGHT: IMAGES + TEXT LABELS BELOW -->
+        <div class="pairing-images">
+            <div class="pairing-image">
+                <img src="/io1.webp" alt="In-Office Treatment">
+            </div>
+            <div class="pairing-product">
+                <img src="/io2.webp" alt="Triple Lipid Restore 2:4:2">
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<style>
+/* IMPACT DRIVEN BY SCIENCE - FULL IMAGE + TEXT LEFT */
+:root {
+    --brand-blue: #4cbbdd;
+}
+
+.impact-section {
+    margin-top: 60px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 50px;
+    position: relative;
+    background-color: #ffffff;
+    color: #ffffff;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.impact-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.impact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.impact-overlay {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    padding: 80px 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+.impact-container {
+    max-width: 600px;
+}
+.impact-title {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.impact-desc {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 32px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+.impact-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 32px;
+    border: 2px solid #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.impact-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+@media (max-width: 992px) {
+    .impact-title {
+        font-size: 36px;
+    }
+    .impact-overlay {
+        padding: 60px 30px;
+    }
+}
+@media (max-width: 768px) {
+    .impact-section {
+        min-height: 600px;
+    }
+    .impact-overlay {
+        background: rgba(0, 0, 0, 0.75);
+        padding: 50px 20px;
+        text-align: center;
+    }
+    .impact-container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .impact-title {
+        font-size: 30px;
+    }
+    .impact-desc {
+        font-size: 15px;
+    }
+    .impact-btn {
+        padding: 11px 28px;
+        font-size: 12px;
+    }
+}
+</style>
+
+<!-- IMPACT DRIVEN BY SCIENCE - FULL IMAGE + TEXT LEFT -->
+<section class="impact-section" style="background-color: white;">
+    <div class="impact-image">
+        <img src="/imp.webp" alt="Impact Driven by Science">
+    </div>
+    <div class="impact-overlay">
+        <div class="impact-container">
+            <h2 class="impact-title">Impact Driven by Science</h2>
+            <p class="impact-desc">
+                We are dedicated to providing quality skincare solutions while working to promote a more sustainable and equitable world.
+            </p>
+            <a href="impact.html" class="impact-btn">LEARN MORE</a>
+        </div>
+    </div>
+</section>
+
+<style>
+/* EXPERT ADVICE - TEXT LEFT, 3 CARDS RIGHT - NO ARROWS */
+:root {
+    --brand-blue: #4cbbdd;
+}
+
+.expert-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+.expert-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.expert-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: left;
+}
+.expert-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+.expert-desc {
+    font-size: 18px;
+    font-weight: 300;
+    color: #666666;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+.expert-btn {
+    display: inline-block;
+    border: 1px solid #000000;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 32px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.expert-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+.expert-grid {
+    flex: 2;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.expert-card {
+    flex: 1;
+    min-width: 260px;
+    max-width: 340px;
+    text-align: left;
+}
+.expert-image {
+    height: 240px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.expert-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.expert-category {
+    font-size: 13px;
+    font-weight: 600;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.expert-article-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+.expert-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+.expert-link:hover {
+    color: var(--brand-blue);
+    border-color: var(--brand-blue);
+}
+@media (max-width: 992px) {
+    .expert-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .expert-content {
+        max-width: 600px;
+    }
+    .expert-grid {
+        justify-content: center;
+        gap: 24px;
+    }
+    .expert-card {
+        max-width: 300px;
+    }
+}
+@media (max-width: 768px) {
+    .expert-section {
+        padding: 60px 0;
+    }
+    .expert-container {
+        padding: 0 20px;
+    }
+    .expert-title {
+        font-size: 30px;
+    }
+    .expert-desc {
+        font-size: 14px;
+    }
+    .expert-btn {
+        padding: 10px 28px;
+        font-size: 12px;
+    }
+    .expert-image {
+        height: 200px;
+    }
+    .expert-article-title {
+        font-size: 17px;
+    }
+}
+</style>
+
+<section class="expert-section">
+    <div class="expert-container">
+        
+        <div class="expert-content">
+            <h2 class="expert-title">Expert Advice</h2>
+            <p class="expert-desc">
+                Explore recommendations, procedures, and skin science education from trusted professionals.
+            </p>
+            <a href="articles.html" class="expert-btn">EXPLORE ARTICLES</a>
+        </div>
+
+        
+        <div class="expert-grid">
+            <!-- Card 1 -->
+            <div class="expert-card">
+                <div class="expert-image">
+                    <img src="ar1.webp" alt="Antioxidant Serum">
+                </div>
+                <div class="expert-category">PRODUCT GUIDES</div>
+                <h3 class="expert-article-title">Which Antioxidant Serum is the Best Option for You?</h3>
+                <a href="antioxidant.html" class="expert-link">READ MORE</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="expert-card">
+                <div class="expert-image">
+                    <img src="/ar2.webp" alt="Environmental Stressors">
+                </div>
+                <div class="expert-category">SKIN SCIENCE</div>
+                <h3 class="expert-article-title">What are Environmental Stressors and Aggressors?</h3>
+                <a href="stressors.html" class="expert-link">READ MORE</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="expert-card">
+                <div class="expert-image">
+                    <img src="/ar3.webp" alt="Fine Lines">
+                </div>
+                <div class="expert-category">PHYSICIAN ADVICE</div>
+                <h3 class="expert-article-title">What Causes Fine Lines and Wrinkles?</h3>
+                <a href="wrinkles.html" class="expert-link">READ MORE</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .footer-container {
+            background-color: #1a1a1a;
+            padding: 60px 40px;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .logo-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            /* removed border-bottom */
+        }
+
+        .logo-placeholder {
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            /* removed dashed border */
+        }
+
+        .logo-placeholder img {
+            width: 400px;
+            object-fit: contain;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-column h3 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+        }
+
+        .columns-bottom {
+            margin-top: 5px;
+        }
+
+        .signup-section {
+            grid-column: 7;
+            grid-row: 1 / 3;
+        }
+
+        .signup-section h3 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .required-text {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #444;
+            background-color: #ffffff;
+            color: #000;
+            font-size: 13px;
+            font-family: inherit;
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #cccccc;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 2px;
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .checkbox-text {
+            flex: 1;
+        }
+
+        .checkbox-text a {
+            color: #0099ff;
+            text-decoration: underline;
+        }
+
+        .signup-button {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ffffff;
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .signup-button:hover {
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #ffffff;
+        }
+
+        .contact-icon-img {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 30px;
+            }
+
+            .signup-section {
+                grid-column: 1 / -1;
+                grid-row: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .footer-container {
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <div class="footer-container">
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                <img src="/logo.png" alt="Logo">
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Skincare Column -->
+            <div class="footer-column">
+                <h3>Skincare ></h3>
+                <ul>
+                    <li><a href="shop-skincare.html">Shop Skincare</a></li>
+                    <li><a href="shop-serums.html">Shop Serums</a></li>
+                    <li><a href="shop-routines.html">Shop Routines</a></li>
+                    <li><a href="shop-concern.html">Shop by Skin Concern</a></li>
+                    <li><a href="expert-advice.html">Expert Advice Articles</a></li>
+                </ul>
+            </div>
+
+            <!-- About Us Column -->
+            <div class="footer-column">
+                <h3>About Us ></h3>
+                <ul>
+                    <li><a href="philosophy.html">Our Integrated Skincare Philosophy</a></li>
+                    <li><a href="founder.html">Our Founder</a></li>
+                    <li><a href="partners.html">Our Pro Partners</a></li>
+                    <li><a href="science.html">Our Science</a></li>
+                    <li><a href="sustainability.html">Our Sustainability Goals</a></li>
+                    <li><a href="values.html">Our Values</a></li>
+                    <li><a href="employment.html">Employment Opportunities</a></li>
+                    <li><a href="professionals.html">For Professionals</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Column -->
+            <div class="footer-column">
+                <h3>Services ></h3>
+                <ul>
+                    <li><a href="live-chat.html">Live Chat with an Aesthetician</a></li>
+                    <li><a href="livestream.html">Livestream Shopping Event</a></li>
+                    <li><a href="consultation.html">Book a Private Online Consultation</a></li>
+                    <li><a href="treatments.html">Explore Professional Treatments</a></li>
+                    <li><a href="spa.html">Find an Advanced Clinical Spa</a></li>
+                    <li><a href="professional.html">Find a Skincare Professional</a></li>
+                </ul>
+            </div>
+
+            <!-- Sign Up Section -->
+            <div class="signup-section">
+                <h3>Sign Up</h3>
+                <p class="required-text">Required fields are marked with an (*).</p>
+
+                <div class="form-group">
+                    <input type="email" placeholder="Email*" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone" required>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" class="checkbox-text">
+                        By submitting this form, I expressly agree to SkinCeuticals, directly or by third parties acting on its behalf, sending me promotional & marketing messages (e.g. cart reminders) - including texts or calls using automated means (including for the selection of dialing of a telephone number) or pre-recorded or artificial voice messages - to the mobile number I provided and understand consent is not a condition of purchase. Msg frequency varies. Msg & Data Rates may Apply. Text HELP for help and STOP to opt out. <a href="privacy.html">Privacy Policy Notice of Financial Incentives</a>
+                    </label>
+                </div>
+
+                <button class="signup-button">Sign Up</button>
+
+                <div class="contact-options">
+                    <a href="live-chat.html" class="contact-item">
+                        <img src="/chatinnit.png" alt="Live Chat" class="contact-icon-img">
+                        <span>LIVE CHAT</span>
+                    </a>
+                    <a href="tel:1-800-771-9499" class="contact-item">
+                        <img src="/call.webp" alt="Phone" class="contact-icon-img">
+                        <span>WAIT LOL</span>
+                    </a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/SkinCeuticals/" title="Facebook" target="_blank">
+                        <img src="/fbini.jpg" alt="Facebook" class="social-icon-img">
+                    </a>
+                    <a href="https://x.com/SkinCeuticals" title="Twitter" target="_blank">
+                        <img src="/xinni.png" alt="Twitter" class="social-icon-img">
+                    </a>
+                    <a href="https://www.pinterest.com/skinceuticals/" title="Pinterest" target="_blank">
+                        <img src="/pinini.png" alt="Pinterest" class="social-icon-img">
+                    </a>
+                    <a href="https://www.instagram.com/skinceuticals/" title="Instagram" target="_blank">
+                        <img src="/insta inni.jpg" alt="Instagram" class="social-icon-img">
+                    </a>
+                    <a href="https://www.youtube.com/user/skinceuticals" title="YouTube" target="_blank">
+                        <img src="/ytini.png" alt="YouTube" class="social-icon-img">
+                    </a>
+                </div>
+            </div>
+
+            <!-- My Account Column -->
+            <div class="footer-column columns-bottom">
+                <h3>My Account ></h3>
+                <ul>
+                    <li><a href="order-status.html">Order Status</a></li>
+                    <li><a href="auto-replenishment.html">Manage Auto-Replenishment</a></li>
+                    <li><a href="gift-cards.html">E-Gift Cards</a></li>
+                    <li><a href="rewards.html">Join SkinCeuticals Rewards</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Column -->
+            <div class="footer-column columns-bottom">
+                <h3>Help ></h3>
+                <ul>
+                    <li><a href="customer-service.html">Customer Service</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="retailers.html">Authorized Retailers</a></li>
+                    <li><a href="afterpay.html">Afterpay</a></li>
+                    <li><a href="health-notice.html">Consumer Health Data Notice</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources Column -->
+            <div class="footer-column columns-bottom">
+                <h3>Resources ></h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                    <li><a href="preferences.html">Online Preferences</a></li>
+                    <li><a href="choices.html">Ad Choices</a></li>
+                    <li><a href="ugc.html">User Generated Content Permission Terms</a></li>
+                    <li><a href="accessibility.html">Accessibility Statement</a></li>
+                    <li><a href="privacy-choices.html">Your Privacy Choices</a></li>
+                    <li><a href="notice-collection.html">Notice At Collection</a></li>
+                    <li><a href="health-data.html">Consumer Health Data Notice</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

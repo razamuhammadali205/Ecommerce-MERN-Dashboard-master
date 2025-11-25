@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Gift Guide | SkinCeuticels Skincare</title>
+    <style>
+        /* === GLOBAL RESET & TYPOGRAPHY === */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-blue: #4cbbdd;
+            --text: #000000;
+            --text-light: #666666;
+            --bg: #ffffff;
+            --bg-alt: #f8f8f8;
+            --dark: #000000;
+            --dark-alt: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 13px;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        h1, h2, h3, h4 { font-weight: 700; line-height: 1.3; }
+
+        img { display: block; max-width: 100%; height: auto; }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* === TOP BANNER === */
+        .top-banner {
+            background: var(--brand-blue);
+            color: var(--dark);
+            text-align: center;
+            padding: 16px 0;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* === HEADER === */
+        .header {
+            background: var(--dark);
+            padding: 30px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo img { height: 50px; margin-left: 44px; }
+
+        .top-links {
+            display: flex;
+            gap: 22px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #aaaaaa;
+        }
+
+        .top-links a { display: flex; align-items: center; gap: 5px; }
+        .top-links a:hover { color: var(--brand-blue); }
+
+        .cart-link { position: relative; }
+        .cart-count {
+            position: absolute;
+            top: -8px; right: -12px;
+            background: var(--brand-blue);
+            color: var(--dark);
+            font-size: 9px;
+            font-weight: 700;
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 28px;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            color: #aaaaaa;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active { color: var(--brand-blue); }
+
+        .holiday-link { color: var(--brand-blue) !important; gap: 6px; }
+        .holiday-link .icon b { font-weight: 700; }
+
+        .search-container {
+            position: relative;
+            width: 220px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 11px 40px 11px 15px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background: #1a1a1a;
+            color: #aaaaaa;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .search-input::placeholder { color: #666; }
+        .search-input:focus { border-color: var(--brand-blue); }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaaaaa;
+            font-size: 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-btn:hover { color: var(--brand-blue); }
+
+        /* === RESPONSIVE HEADER === */
+        @media (max-width: 1024px) {
+            .header-inner { flex-direction: column; gap: 16px; padding: 0 20px; }
+            .top-links { order: 1; width: 100%; justify-content: center; }
+            .logo { order: 2; }
+            .main-nav { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 16px; font-size: 12px; }
+            .search-container { order: 4; width: 100%; max-width: 300px; }
+        }
+
+        @media (max-width: 768px) {
+            .logo img { height: 40px; margin-left: 0; }
+            .top-links, .main-nav { font-size: 11px; gap: 12px; }
+        }
+
+        /* === HERO === */
+        .holiday-hero {
+            height: 60vh;
+            min-height: 420px;
+            background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url('/heroholiday.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .holiday-hero h1 {
+            font-size: clamp(38px, 6.5vw, 72px);
+            margin-bottom: 28px;
+            text-shadow: 0 2px 10px rgba(0,0,0,.5);
+        }
+
+        .holiday-hero p {
+            font-size: 17px;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            opacity: .95;
+        }
+
+        /* === SECTION BASE === */
+        .section {
+            padding: 140px 0;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 24px;
+        }
+
+        .section .subtitle {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 80px;
+            line-height: 1.8;
+        }
+
+        /* === GIFT GUIDE: FIXED IMAGE FIT === */
+        .gift-guide {
+            background: var(--bg-alt);
+        }
+
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 70px;
+        }
+
+        .gift-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,.05);
+            transition: transform .3s ease;
+        }
+
+        .gift-card:hover { transform: translateY(-10px); }
+
+        .gift-img {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gift-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform .4s ease;
+            display: block;
+        }
+
+        .gift-card:hover .gift-img img {
+            transform: scale(1.06);
+        }
+
+        .gift-info {
+            padding: 36px;
+            text-align: left;
+        }
+
+        .gift-title {
+            font-size: 19px;
+            margin-bottom: 16px;
+        }
+
+        .gift-desc {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .gift-details {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* === GIFTING TIPS SECTION === */
+        .gifting-tips {
+            background: #fff;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 30px;
+        }
+
+        .tip-card {
+            text-align: left;
+            padding: 32px;
+            background: #fafafa;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,.03);
+        }
+
+        .tip-number {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: var(--brand-blue);
+            color: #000;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tip-card h4 {
+            font-size: 17px;
+            margin-bottom: 14px;
+        }
+
+        .tip-card p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* === VALUES: ONE ROW, SMALLER, TIGHTER === */
+        .holiday-values {
+            background: var(--dark);
+            color: #fff;
+            padding: 100px 0;
+        }
+
+        .values-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: nowrap;
+        }
+
+        .value-item {
+            flex: 1;
+            max-width: 200px;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .value-icon {
+            width: 60px; height: 60px;
+            margin: 0 auto 18px;
+            background: var(--brand-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: var(--dark);
+        }
+
+        .value-title {
+            font-size: 15px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .value-desc {
+            font-size: 11.5px;
+            opacity: .9;
+            line-height: 1.6;
+        }
+
+        /* === SCIENCE BEHIND SECTION === */
+        .science-section {
+            background: #f9f9fb;
+        }
+
+        .science-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+            line-height: 1.9;
+            font-size: 13.5px;
+        }
+
+        .science-content h3 {
+            font-size: 20px;
+            margin: 32px 0 16px;
+            color: var(--brand-blue);
+        }
+
+        .science-content ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .science-content li {
+            margin-bottom: 12px;
+        }
+
+        /* === CTA === */
+        .holiday-cta {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
+            color: #fff;
+        }
+
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+
+        .cta-content p {
+            font-size: 17px;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            opacity: .92;
+            line-height: 1.8;
+        }
+
+        /* === LAST UPDATED === */
+        .last-updated {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            margin: 80px 0;
+            font-style: italic;
+        }
+
+        /* === FOOTER === */
+        .footer-container {
+            background: var(--dark-alt);
+            color: #fff;
+            padding: 100px 40px 70px;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+        }
+
+        .logo-section {
+            margin-bottom: 80px;
+            padding-bottom: 45px;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo-placeholder img { width: 380px; }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 70px;
+            margin-bottom: 70px;
+        }
+
+        .footer-column h3 {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .footer-column a {
+            display: block;
+            font-size: 12px;
+            color: #ccc;
+            margin-bottom: 12px;
+            transition: color .3s;
+        }
+
+        .footer-column a:hover { color: #fff; }
+
+        .signup-section {
+            grid-column: 7;
+            grid-row: 1 / 3;
+        }
+
+        .signup-section h3 { font-size: 11px; margin-bottom: 22px; }
+
+        .required-text {
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid #444;
+            background: #fff;
+            color: #000;
+            font-size: 12px;
+            margin-bottom: 16px;
+            border-radius: 4px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            font-size: 10px;
+            color: #ccc;
+            align-items: flex-start;
+        }
+
+        .checkbox-group input[type="checkbox"] { width: 16px; height: 16px; margin-top: 2px; }
+
+        .checkbox-text a { color: #0099ff; text-decoration: underline; }
+
+        .signup-button {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all .3s;
+            border-radius: 4px;
+        }
+
+        .signup-button:hover {
+            background: #fff;
+            color: var(--dark-alt);
+        }
+
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            margin: 45px 0 50px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .contact-icon-img, .social-icon-img {
+            width: 42px; height: 42px;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        .social-icons { display: flex; gap: 18px; }
+
+        /* === RESPONSIVE: VALUES & IMAGES === */
+        @media (max-width: 768px) {
+            .values-grid {
+                flex-wrap: wrap;
+                gap: 30px;
+                max-width: 100%;
+            }
+            .value-item {
+                flex: 1 1 45%;
+                max-width: none;
+            }
+            .value-icon { width: 50px; height: 50px; font-size: 22px; }
+            .value-title { font-size: 14px; }
+            .value-desc { font-size: 11px; }
+
+            .gift-img { height: 280px; }
+        }
+
+        @media (max-width: 480px) {
+            .values-grid { flex-direction: column; gap: 25px; }
+            .value-item { max-width: 100%; }
+
+            .gift-img { height: 240px; }
+            .gift-info { padding: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        USE CODE: <b>SC501</b> For Your First Order And Get 10% Discount – Limited Time Holiday Offer!
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="/logo.png" alt="SkinCeuticels Skincare Logo">
+            </a>
+
+            <div class="top-links">
+                <a href="#"><span class="icon">$</span> US (EN)</a>
+                <a href="professionals.html"><span class="icon">Location</span> Find a Professional</a>
+                <a href="contact.html">Customer Service</a>
+                <a href="account.html">My Account</a>
+                <a href="cart.html" class="cart-link">
+                    <span class="icon">Cart</span> My Cart
+                    <span class="cart-count" id="cart-count-header">0</span>
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <a href="routine.html"><b>BUILD MY ROUTINE</b></a>
+                <a href="skincare.html"><b>SKINCARE</b></a>
+                <a href="bestsellers.html"><b>BEST SELLERS</b></a>
+                <a href="concerns.html"><b>SKIN CONCERNS</b></a>
+                <a href="learn.html"><b>LEARN</b></a>
+                <a href="services.html"><b>SERVICES</b></a>
+                <a href="about.html"><b>ABOUT US</b></a>
+                <a href="holiday.html" class="holiday-link active">
+                    <span class="icon"><b>Gift</b></span> <b>HOLIDAY GIFT GUIDE</b>
+                </a>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button class="search-btn" aria-label="Search">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="holiday-hero">
+        <div class="container">
+            <h1>The 2025 Holiday Gift Guide</h1>
+            <p>Discover clinically proven, dermatologist-recommended skincare gifts that deliver visible results. From antioxidant protection to advanced anti-aging, each set is thoughtfully curated for radiant, healthy skin this holiday season and beyond.</p>
+        </div>
+    </section>
+
+    <!-- Gift Guide: IMAGES NOW PERFECTLY FIT -->
+    <section class="gift-guide section">
+        <div class="container">
+            <h2>Curated Holiday Gift Sets</h2>
+            <p class="subtitle">Our gift sets combine award-winning, science-backed formulas to address specific skin concerns. Each product is rigorously tested for efficacy and stability, ensuring maximum results with every use.</p>
+
+            <div class="gift-grid">
+                <div class="gift-card">
+                    <div class="gift-img">
+                        <img src="/h1.webp" alt="Antioxidant Glow Set">
+                    </div>
+                    <div class="gift-info">
+                        <div class="gift-title">Antioxidant Glow Set</div>
+                        <div class="gift-desc">C E Ferulic + Phloretin CF for daily defense against environmental damage and visible brightness.</div>
+                        <div class="gift-details">
+                            <strong>Includes:</strong> C E Ferulic (30ml) – Patented vitamin C serum with 15% L-ascorbic acid, 1% vitamin E, and 0.5% ferulic acid. Clinically proven to reduce oxidative damage by up to 41%. Phloretin CF (30ml) – Daytime antioxidant with 10% vitamin C, 2% phloretin, and 0.5% ferulic acid. Targets discoloration and improves skin tone.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-img">
+                        <img src="/h2.webp" alt="Age-Defying Duo">
+                    </div>
+                    <div class="gift-info">
+                        <div class="gift-title">Age-Defying Duo</div>
+                        <div class="gift-desc">Triple Lipid Restore 2:4:2 paired with H.A. Intensifier for deep hydration and firmer-looking skin.</div>
+                        <div class="gift-details">
+                            <strong>Includes:</strong> Triple Lipid Restore 2:4:2 (48ml) – Ceramide-rich cream with 2% ceramides, 4% natural cholesterol, and 2% fatty acids. Restores skin’s external barrier and supports natural repair. H.A. Intensifier (30ml) – Multi-dimensional hyaluronic acid serum with 1.3% HA, 10% Proxylane™, and licorice root extract. Increases skin’s hyaluronic acid levels by 30%.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-img">
+                        <img src="/h3.jpg" alt="Radiance Renewal Kit">
+                    </div>
+                    <div class="gift-info">
+                        <div class="gift-title">Radiance Renewal Kit</div>
+                        <div class="gift-desc">P-TIOX peptide serum and Retinol 0.3 for smoother texture and reduced expression lines.</div>
+                        <div class="gift-details">
+                            <strong>Includes:</strong> P-TIOX (30ml) – Advanced peptide serum with 5% peptide complex and 5% PHA. Visibly reduces 9 types of expression lines in 1 week. Retinol 0.3 (30ml) – Nighttime retinol with 0.3% pure retinol encapsulated for stability. Improves the appearance of fine lines, wrinkles, and pores with minimal irritation.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gifting Tips -->
+    <section class="gifting-tips section">
+        <div class="container">
+            <h2>Expert Gifting Tips</h2>
+            <p class="subtitle">Not sure where to start? Our skincare specialists share professional insights to help you choose the perfect gift for every skin type and concern.</p>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <h4>Know Their Skin Type</h4>
+                    <p>Dry skin benefits from lipid-replenishing creams like Triple Lipid Restore. Oily or acne-prone skin thrives with lightweight serums like Phloretin CF. Combination skin? Layer a hydrating serum under a matte moisturizer.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <h4>Focus on Concerns</h4>
+                    <p>Target specific issues: C E Ferulic for environmental protection, H.A. Intensifier for plumpness, Retinol 0.3 for texture and lines. Pairing actives with antioxidants maximizes efficacy and minimizes irritation.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <h4>Layering is Key</h4>
+                    <p>Teach them the correct order: Cleanse → Serum (vitamin C in AM, retinol in PM) → Moisturizer → SPF (day). Our gift sets include step-by-step regimen cards for easy adoption.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <h4>Start Slow with Actives</h4>
+                    <p>Retinol and high-potency vitamin C should be introduced gradually. Recommend using 2–3 times per week initially, then building tolerance. Always follow with broad-spectrum SPF in the morning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values: ONE ROW, SMALLER, TIGHTER -->
+    <section class="holiday-values">
+        <div class="values-grid">
+            <!-- Gift -->
+            <div class="value-item">
+                <div class="value-icon">Gift</div>
+                <div class="value-title">Thoughtful Gifting</div>
+                <div class="value-desc">Each set is curated with clinically proven formulas to deliver real results. From brightening serums to barrier-repair creams, every product is designed to transform skin with visible, measurable improvements.</div>
+            </div>
+
+            <!-- Leaf -->
+            <div class="value-item">
+                <div class="value-icon">Leaf</div>
+                <div class="value-title">Sustainable Packaging</div>
+                <div class="value-desc">Eco-conscious, recyclable materials with minimal environmental impact. Our gift boxes are made from 100% post-consumer recycled paper and printed with soy-based inks. Refillable glass bottles reduce waste.</div>
+            </div>
+
+            <!-- Heart -->
+            <div class="value-item">
+                <div class="value-icon">Heart</div>
+                <div class="value-title">For Every Skin Type</div>
+                <div class="value-desc">Inclusive skincare solutions tailored to diverse needs and concerns. From sensitive to resilient, dry to oily, our dermatologist-grade formulas are safe and effective across all ethnicities and ages.</div>
+            </div>
+
+            <!-- Flask -->
+            <div class="value-item">
+                <div class="value-icon">Flask</div>
+                <div class="value-title">Backed by Science</div>
+                <div class="value-desc">Formulas developed with dermatologists and rigorously tested for efficacy. Over 100 clinical studies validate our ingredients. Patented stabilization technology ensures actives remain potent until the last drop.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Behind -->
+    <section class="science-section section">
+        <div class="container">
+            <h2>The Science Behind Our Formulas</h2>
+            <p class="subtitle">Every SkinCeuticels product is backed by decades of research and clinical validation. Here’s what sets our ingredients apart.</p>
+
+            <div class="science-content">
+                <h3>Patented Vitamin C Technology</h3>
+                <p>Our vitamin C serums use a precise 15% L-ascorbic acid concentration at pH 2.0–3.5 for optimal absorption. Combined with ferulic acid, this trio neutralizes free radicals caused by UV, pollution, and infrared radiation. In a 2005 study, C E Ferulic reduced oxidative damage by 41% and improved fine lines by 24% in 12 weeks.</p>
+
+                <h3>Triple Lipid Barrier Restoration</h3>
+                <p>Skin’s natural barrier is composed of ceramides, cholesterol, and fatty acids in a 2:4:2 ratio. Aging and harsh cleansers deplete these lipids, leading to dryness and sensitivity. Triple Lipid Restore 2:4:2 replenishes this exact ratio, increasing skin’s hydration by 68% in 1 hour and improving barrier function by 88% in 4 weeks.</p>
+
+                <h3>Encapsulated Retinol Delivery</h3>
+                <p>Pure retinol is highly unstable and irritating. Our retinol is micro-encapsulated in a soothing base to minimize redness while maximizing efficacy. Clinical trials show Retinol 0.3 reduces fine lines by 36% and improves skin texture by 42% in 12 weeks with nightly use.</p>
+
+                <h3>Key Clinical Results</h3>
+                <ul>
+                    <li>C E Ferulic: 8x environmental protection vs. untreated skin</li>
+                    <li>H.A. Intensifier: +30% skin hyaluronic acid levels in 6 weeks</li>
+                    <li>P-TIOX: 100% of users saw reduced expression lines in 1 week</li>
+                    <li>Triple Lipid Restore: 91% improvement in skin smoothness</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="holiday-cta section">
+        <div class="container cta-content">
+            <h2>Give the Gift of Healthy, Radiant Skin</h2>
+            <p>Elevate their routine with advanced, science-driven skincare this holiday season. Each gift set includes a personalized regimen card, deluxe samples, and complimentary gift wrapping. Limited quantities available.</p>
+        </div>
+    </section>
+
+    <p class="last-updated"></p>
+
+    <!-- Footer -->
+    <footer class="footer-container">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo-placeholder">
+                    <img src="/logo.png" alt="Logo">
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="footer-column">
+                    <h3>Skincare ></h3>
+                    <ul>
+                        <li><a href="shop-skincare.html">Shop Skincare</a></li>
+                        <li><a href="shop-serums.html">Shop Serums</a></li>
+                        <li><a href="shop-routines.html">Shop Routines</a></li>
+                        <li><a href="shop-concern.html">Shop by Skin Concern</a></li>
+                        <li><a href="expert-advice.html">Expert Advice Articles</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>About Us ></h3>
+                    <ul>
+                        <li><a href="philosophy.html">Our Integrated Skincare Philosophy</a></li>
+                        <li><a href="founder.html">Our Founder</a></li>
+                        <li><a href="partners.html">Our Pro Partners</a></li>
+                        <li><a href="science.html">Our Science</a></li>
+                        <li><a href="sustainability.html">Our Sustainability Goals</a></li>
+                        <li><a href="values.html">Our Values</a></li>
+                        <li><a href="employment.html">Employment Opportunities</a></li>
+                        <li><a href="professionals.html">For Professionals</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Services ></h3>
+                    <ul>
+                        <li><a href="live-chat.html">Live Chat with an Aesthetician</a></li>
+                        <li><a href="livestream.html">Livestream Shopping Event</a></li>
+                        <li><a href="consultation.html">Book a Private Online Consultation</a></li>
+                        <li><a href="treatments.html">Explore Professional Treatments</a></li>
+                        <li><a href="spa.html">Find an Advanced Clinical Spa</a></li>
+                        <li><a href="professional.html">Find a Skincare Professional</a></li>
+                    </ul>
+                </div>
+
+                <div class="signup-section">
+                    <h3>Sign Up</h3>
+                    <p class="required-text">Required fields are marked with an (*).</p>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email*" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms" class="checkbox-text">
+                            By submitting this form, I agree to receive promotional messages. <a href="privacy.html">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button class="signup-button">Sign Up</button>
+
+                    <div class="contact-options">
+                        <a href="live-chat.html" class="contact-item">
+                            <img src="/chatinnit.png" alt="Live Chat" class="contact-icon-img">
+                            <span>LIVE CHAT</span>
+                        </a>
+                        <a href="tel:1-800-771-9499" class="contact-item">
+                            <img src="/call.webp" alt="Phone" class="contact-icon-img">
+                            <span>1-800-771-9499</span>
+                        </a>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/SkinCeuticals/" target="_blank"><img src="/fbini.jpg" alt="Facebook" class="social-icon-img"></a>
+                        <a href="https://x.com/SkinCeuticals" target="_blank"><img src="/xinni.png" alt="Twitter" class="social-icon-img"></a>
+                        <a href="https://www.pinterest.com/skinceuticals/" target="_blank"><img src="/pinini.png" alt="Pinterest" class="social-icon-img"></a>
+                        <a href="https://www.instagram.com/skinceuticals/" target="_blank"><img src="/insta inni.jpg" alt="Instagram" class="social-icon-img"></a>
+                        <a href="https://www.youtube.com/user/skinceuticals" target="_blank"><img src="/ytini.png" alt="YouTube" class="social-icon-img"></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>My Account ></h3>
+                    <ul>
+                        <li><a href="order-status.html">Order Status</a></li>
+                        <li><a href="auto-replenishment.html">Manage Auto-Replenishment</a></li>
+                        <li><a href="gift-cards.html">E-Gift Cards</a></li>
+                        <li><a href="rewards.html">Join SkinCeuticals Rewards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Help ></h3>
+                    <ul>
+                        <li><a href="customer-service.html">Customer Service</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="retailers.html">Authorized Retailers</a></li>
+                        <li><a href="afterpay.html">Afterpay</a></li>
+                        <li><a href="health-data.html">Consumer Health Data Notice</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Resources ></h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                        <li><a href="preferences.html">Online Preferences</a></li>
+                        <li><a href="choices.html">Ad Choices</a></li>
+                        <li><a href="ugc.html">User Generated Content Permission Terms</a></li>
+                        <li><a href="accessibility.html">Accessibility Statement</a></li>
+                        <li><a href="privacy-choices.html">Your Privacy Choices</a></li>
+                        <li><a href="notice-collection.html">Notice At Collection</a></li>
+                        <li><a href="health-data.html">Consumer Health Data Notice</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="privacy-requests.html">Privacy Requests</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const count = document.getElementById('cart-count-header');
+            const cart = JSON.parse(localStorage.getItem('skinceuticels-cart') || '[]');
+            const total = cart.reduce((s, i) => s + i.quantity, 0);
+            count.textContent = total;
+        });
+    </script>
+</body>
+</html>

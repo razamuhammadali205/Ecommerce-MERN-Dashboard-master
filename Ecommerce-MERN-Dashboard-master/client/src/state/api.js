@@ -19,14 +19,15 @@ export const api = createApi({
       query: () => "client/customers",
       providesTags: ["Customers"],
     }),
-    getTransactions: build.query({
-      query: ({ page, pageSize, sort, search}) => ({
-        url: "client/transactions",
-        method: "GET",
-        params: { page, pageSize, sort, search },
-      }),
-      providesTags: ["Transactions"],
-    }),
+  getTransactions: build.query({
+  query: ({ page, pageSize, sort, search }) => ({
+    url: "sales/transactions", // correct backend path
+    method: "GET",
+    params: { page, pageSize, sort, search },
+  }),
+  providesTags: ["Transactions"],
+}),
+
     getGeography: build.query({
       query: () => "client/geography",
       providesTags: ["Geography"],

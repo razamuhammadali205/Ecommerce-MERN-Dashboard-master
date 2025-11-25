@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Privacy Choices | SkinCeuticels Skincare</title>
+    <style>
+        /* Full Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #fff;
+            line-height: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font: inherit;
+            color: inherit;
+        }
+
+        :root {
+            --brand-blue: #4cbbdd;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background-color: var(--brand-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 13px;
+            font-weight: 500;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .top-banner a {
+            color: #ffffff;
+            text-decoration: underline;
+            margin-left: 4px;
+            font-weight: 600;
+        }
+
+        .close-banner {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        /* Header */
+        .header {
+            background-color: #000000;
+            padding: 20px 0;
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: block;
+            height: 50px;
+            width: auto;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            display: block;
+            margin-left: 44px;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #aaaaaa;
+        }
+
+        .top-links a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+        }
+
+        .top-links a:hover {
+            color: var(--brand-blue);
+        }
+
+        .top-links .icon {
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .cart-link {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background-color: var(--brand-blue);
+            color: #000000;
+            font-size: 10px;
+            font-weight: 700;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #aaaaaa;
+            flex: 1;
+            justify-content: center;
+            margin: 12px 0 8px;
+        }
+
+        .main-nav a {
+            transition: color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: var(--brand-blue);
+        }
+
+        .holiday-link {
+            color: var(--brand-blue) !important;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .holiday-link .icon {
+            font-size: 15px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 220px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 11px 40px 11px 15px;
+            border: 1px solid #333333;
+            border-radius: 4px;
+            background-color: #1a1a1a;
+            color: #aaaaaa;
+            font-size: 13px;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input::placeholder {
+            color: #666666;
+            font-weight: 500;
+        }
+
+        .search-input:focus {
+            border-color: var(--brand-blue);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaaaaa;
+            font-size: 17px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease;
+        }
+
+        .search-btn:hover {
+            color: var(--brand-blue);
+        }
+
+        @media (max-width: 1024px) {
+            .header-inner {
+                flex-direction: column;
+                padding: 0 20px;
+                gap: 12px;
+            }
+
+            .top-links {
+                order: 1;
+                width: 100%;
+                justify-content: center;
+                gap: 18px;
+            }
+
+            .logo {
+                order: 2;
+            }
+
+            .main-nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+                font-size: 13px;
+                margin: 10px 0;
+            }
+
+            .search-container {
+                order: 4;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-banner {
+                font-size: 12px;
+                padding: 6px 0;
+            }
+
+            .close-banner {
+                right: 15px;
+                font-size: 18px;
+            }
+
+            .logo {
+                height: 40px;
+            }
+
+            .main-nav {
+                gap: 12px;
+                font-size: 12px;
+            }
+
+            .top-links {
+                gap: 12px;
+                font-size: 12px;
+            }
+        }
+
+        /* Your Privacy Choices Page */
+        body { color: #000000; line-height: 1.7; }
+        .privacy-choices-container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .privacy-choices-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .privacy-choices-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 16px;
+        }
+
+        .privacy-choices-header p {
+            font-size: 18px;
+            color: #666666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .privacy-choices-content {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .choices-section {
+            margin-bottom: 48px;
+        }
+
+        .choices-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--brand-blue);
+        }
+
+        .section-text {
+            font-size: 16px;
+            color: #444444;
+            margin-bottom: 16px;
+        }
+
+        .section-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-list {
+            list-style: none;
+            margin: 16px 0;
+        }
+
+        .section-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #444444;
+        }
+
+        .section-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--brand-blue);
+            font-weight: 700;
+        }
+
+        .toggle-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-group:hover {
+            background: #f0f0f0;
+        }
+
+        .toggle-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            background: #cccccc;
+            border-radius: 26px;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background: #ffffff;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-switch.active {
+            background: var(--brand-blue);
+        }
+
+        .toggle-switch.active::after {
+            transform: translateX(24px);
+        }
+
+        .opt-out-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--brand-blue);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .opt-out-link:hover {
+            color: #0a9cd0;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            color: #999999;
+            text-align: center;
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .privacy-choices-header h1 { font-size: 36px; }
+            .privacy-choices-content { padding: 24px; }
+            .section-title { font-size: 20px; }
+            .section-title::after { width: 40px; }
+            .toggle-group { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .toggle-label { margin-bottom: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner -->
+    <div class="top-banner" style="color: #000000;">
+        USE CODE: <b style="color: #000000;">SC501</b> For Your First Order And Get 10% Discount
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="/logo.png" alt="SkinCeuticels Skincare Logo">
+            </a>
+
+            <div class="top-links">
+                <a href="#"><span class="icon">$</span> US (EN)</a>
+                <a href="professionals.html"><span class="icon">Location</span> Find a Professional</a>
+                <a href="contact.html">Customer Service</a>
+                <a href="account.html">My Account</a>
+                <a href="cart.html" class="cart-link">
+                    <span class="icon">Cart</span> My Cart
+                    <span class="cart-count" id="cart-count-header">0</span>
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <a href="routine.html"><b>BUILD MY ROUTINE</b></a>
+                <a href="skincare.html"><b>SKINCARE</b></a>
+                <a href="bestsellers.html"><b>BEST SELLERS</b></a>
+                <a href="concerns.html"><b>SKIN CONCERNS</b></a>
+                <a href="learn.html"><b>LEARN</b></a>
+                <a href="services.html"><b>SERVICES</b></a>
+                <a href="about.html"><b>ABOUT US</b></a>
+                <a href="holiday.html" class="holiday-link">
+                    <span class="icon"><b>Gift</b></span> <b>HOLIDAY GIFT GUIDE</b>
+                </a>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button class="search-btn" aria-label="Search">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Your Privacy Choices Content -->
+    <div class="privacy-choices-container">
+        <div class="privacy-choices-header">
+            <h1>Your Privacy Choices</h1>
+            <p>Control your data and marketing preferences. We respect your privacy rights.</p>
+        </div>
+
+        <div class="privacy-choices-content">
+            <div class="choices-section">
+                <h2 class="section-title">1. Marketing Communications</h2>
+                <p class="section-text">Choose whether to receive promotional emails, texts, or calls from SkinCeuticels.</p>
+
+                <div class="toggle-group" data-preference="email-marketing">
+                    <div class="toggle-label">Email Promotions & Newsletters</div>
+                    <div class="toggle-switch active"></div>
+                </div>
+
+                <div class="toggle-group" data-preference="sms-marketing">
+                    <div class="toggle-label">SMS & Text Alerts</div>
+                    <div class="toggle-switch"></div>
+                </div>
+
+                <div class="toggle-group" data-preference="phone-marketing">
+                    <div class="toggle-label">Phone Calls & Offers</div>
+                    <div class="toggle-switch"></div>
+                </div>
+
+                <p class="section-text">You can also <a href="mailto:unsubscribe@skinceuticels.com" class="opt-out-link">unsubscribe from all marketing</a> at any time.</p>
+            </div>
+
+            <div class="choices-section">
+                <h2 class="section-title">2. Personalized Advertising</h2>
+                <p class="section-text">We use cookies and tracking to show relevant ads. Opt out of personalized ads across the web.</p>
+
+                <div class="toggle-group" data-preference="personalized-ads">
+                    <div class="toggle-label">Allow Personalized Ads</div>
+                    <div class="toggle-switch active"></div>
+                </div>
+
+                <p class="section-text">Even if you opt out, you’ll still see ads — just less relevant ones.</p>
+                <p class="section-text">You can also opt out via industry tools:</p>
+                <ul class="section-list">
+                    <li><a href="https://optout.aboutads.info" target="_blank" class="opt-out-link">DAA WebChoices</a></li>
+                    <li><a href="https://youradchoices.com" target="_blank" class="opt-out-link">YourAdChoices</a></li>
+                    <li><a href="https://preferences-mgr.truste.com" target="_blank" class="opt-out-link">TRUSTe Preference Manager</a></li>
+                </ul>
+            </div>
+
+            <div class="choices-section">
+                <h2 class="section-title">3. Data Sharing & Sale (CCPA)</h2>
+                <p class="section-text">Under California law, you can opt out of the "sale" or "sharing" of your personal information for cross-context behavioral advertising.</p>
+
+                <div class="toggle-group" data-preference="ccpa-opt-out">
+                    <div class="toggle-label">Do Not Sell or Share My Personal Information</div>
+                    <div class="toggle-switch"></div>
+                </div>
+
+                <p class="section-text">This applies to data shared with advertising partners. It does not affect order fulfillment or analytics.</p>
+            </div>
+
+            <div class="choices-section">
+                <h2 class="section-title">4. Your Rights</h2>
+                <p class="section-text">You have the right to:</p>
+                <ul class="section-list">
+                    <li>Know what personal data we collect</li>
+                    <li>Access or download your data</li>
+                    <li>Correct inaccurate information</li>
+                    <li>Request deletion of your data</li>
+                    <li>Opt out of marketing and data sharing</li>
+                </ul>
+                <p class="section-text">Submit a request at <a href="privacy-requests.html" class="opt-out-link">Privacy Requests</a> or email <a href="mailto:privacy@skinceuticels.com" class="opt-out-link">privacy@skinceuticels.com</a>.</p>
+            </div>
+
+            <div class="choices-section">
+                <h2 class="section-title">5. Global Privacy Controls (GPC)</h2>
+                <p class="section-text">We honor Global Privacy Control signals from your browser. Enable GPC to automatically opt out of data sharing.</p>
+                <p class="section-text"><a href="https://globalprivacycontrol.org" target="_blank" class="opt-out-link">Learn more about GPC</a></p>
+            </div>
+        </div>
+
+        <p class="last-updated"></p>
+    </div>
+
+    <!-- Footer -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .footer-container {
+            background-color: #1a1a1a;
+            padding: 60px 40px;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .logo-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+        }
+
+        .logo-placeholder {
+            display: flex;
+            align-items: left;
+            justify-content: left;
+        }
+
+        .logo-placeholder img {
+            width: 400px;
+            object-fit: contain;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-column h3 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+        }
+
+        .columns-bottom {
+            margin-top: 5px;
+        }
+
+        .signup-section {
+            grid-column: 7;
+            grid-row: 1 / 3;
+        }
+
+        .signup-section h3 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .required-text {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #444;
+            background-color: #ffffff;
+            color: #000;
+            font-size: 13px;
+            font-family: inherit;
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #cccccc;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 2px;
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .checkbox-text {
+            flex: 1;
+        }
+
+        .checkbox-text a {
+            color: #0099ff;
+            text-decoration: underline;
+        }
+
+        .signup-button {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ffffff;
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .signup-button:hover {
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #ffffff;
+        }
+
+        .contact-icon-img {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 30px;
+            }
+
+            .signup-section {
+                grid-column: 1 / -1;
+                grid-row: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .footer-container {
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <div class="footer-container">
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                <img src="/logo.png" alt="Logo">
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="footer-column">
+                <h3>Skincare ></h3>
+                <ul>
+                    <li><a href="shop-skincare.html">Shop Skincare</a></li>
+                    <li><a href="shop-serums.html">Shop Serums</a></li>
+                    <li><a href="shop-routines.html">Shop Routines</a></li>
+                    <li><a href="shop-concern.html">Shop by Skin Concern</a></li>
+                    <li><a href="expert-advice.html">Expert Advice Articles</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>About Us ></h3>
+                <ul>
+                    <li><a href="philosophy.html">Our Integrated Skincare Philosophy</a></li>
+                    <li><a href="founder.html">Our Founder</a></li>
+                    <li><a href="partners.html">Our Pro Partners</a></li>
+                    <li><a href="science.html">Our Science</a></li>
+                    <li><a href="sustainability.html">Our Sustainability Goals</a></li>
+                    <li><a href="values.html">Our Values</a></li>
+                    <li><a href="employment.html">Employment Opportunities</a></li>
+                    <li><a href="professionals.html">For Professionals</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services ></h3>
+                <ul>
+                    <li><a href="live-chat.html">Live Chat with an Aesthetician</a></li>
+                    <li><a href="livestream.html">Livestream Shopping Event</a></li>
+                    <li><a href="consultation.html">Book a Private Online Consultation</a></li>
+                    <li><a href="treatments.html">Explore Professional Treatments</a></li>
+                    <li><a href="spa.html">Find an Advanced Clinical Spa</a></li>
+                    <li><a href="professional.html">Find a Skincare Professional</a></li>
+                </ul>
+            </div>
+
+            <div class="signup-section">
+                <h3>Sign Up</h3>
+                <p class="required-text">Required fields are marked with an (*).</p>
+                <div class="form-group">
+                    <input type="email" placeholder="Email*" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone" required>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" class="checkbox-text">
+                        By submitting this form, I expressly agree to SkinCeuticals, directly or by third parties acting on its behalf, sending me promotional & marketing messages (e.g. cart reminders) - including texts or calls using automated means (including for the selection of dialing of a telephone number) or pre-recorded or artificial voice messages - to the mobile number I provided and understand consent is not a condition of purchase. Msg frequency varies. Msg & Data Rates may Apply. Text HELP for help and STOP to opt out. <a href="privacy.html">Privacy Policy Notice of Financial Incentives</a>
+                    </label>
+                </div>
+                <button class="signup-button">Sign Up</button>
+
+                <div class="contact-options">
+                    <a href="live-chat.html" class="contact-item">
+                        <img src="/chatinnit.png" alt="Live Chat" class="contact-icon-img">
+                        <span>LIVE CHAT</span>
+                    </a>
+                    <a href="tel:1-800-771-9499" class="contact-item">
+                        <img src="/call.webp" alt="Phone" class="contact-icon-img">
+                        <span>WAIT LOL</span>
+                    </a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/SkinCeuticals/" title="Facebook" target="_blank">
+                        <img src="/fbini.jpg" alt="Facebook" class="social-icon-img">
+                    </a>
+                    <a href="https://x.com/SkinCeuticals" title="Twitter" target="_blank">
+                        <img src="/xinni.png" alt="Twitter" class="social-icon-img">
+                    </a>
+                    <a href="https://www.pinterest.com/skinceuticals/" title="Pinterest" target="_blank">
+                        <img src="/pinini.png" alt="Pinterest" class="social-icon-img">
+                    </a>
+                    <a href="https://www.instagram.com/skinceuticals/" title="Instagram" target="_blank">
+                        <img src="/insta inni.jpg" alt="Instagram" class="social-icon-img">
+                    </a>
+                    <a href="https://www.youtube.com/user/skinceuticals" title="YouTube" target="_blank">
+                        <img src="/ytini.png" alt="YouTube" class="social-icon-img">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column columns-bottom">
+                <h3>My Account ></h3>
+                <ul>
+                    <li><a href="order-status.html">Order Status</a></li>
+                    <li><a href="auto-replenishment.html">Manage Auto-Replenishment</a></li>
+                    <li><a href="gift-cards.html">E-Gift Cards</a></li>
+                    <li><a href="rewards.html">Join SkinCeuticals Rewards</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column columns-bottom">
+                <h3>Help ></h3>
+                <ul>
+                    <li><a href="customer-service.html">Customer Service</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="retailers.html">Authorized Retailers</a></li>
+                    <li><a href="afterpay.html">Afterpay</a></li>
+                    <li><a href="health-notice.html">Consumer Health Data Notice</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column columns-bottom">
+                <h3>Resources ></h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                    <li><a href="preferences.html">Online Preferences</a></li>
+                    <li><a href="choices.html">Ad Choices</a></li>
+                    <li><a href="ugc.html">User Generated Content Permission Terms</a></li>
+                    <li><a href="accessibility.html">Accessibility Statement</a></li>
+                    <li><a href="privacy-choices.html">Your Privacy Choices</a></li>
+                    <li><a href="notice-collection.html">Notice At Collection</a></li>
+                    <li><a href="health-data.html">Consumer Health Data Notice</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Your Privacy Choices - Interactive Toggles & Cart Count
+        document.addEventListener('DOMContentLoaded', function () {
+            const cartCountHeader = document.getElementById('cart-count-header');
+            const toggleGroups = document.querySelectorAll('.toggle-group');
+
+            // Update cart count
+            const cart = JSON.parse(localStorage.getItem('skinceuticels-cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountHeader.textContent = totalItems;
+
+            // Toggle functionality
+            toggleGroups.forEach(group => {
+                const switchEl = group.querySelector('.toggle-switch');
+                const preference = group.getAttribute('data-preference');
+
+                // Load saved preference
+                const saved = localStorage.getItem(`privacy-${preference}`);
+                if (saved === 'false') {
+                    switchEl.classList.remove('active');
+                }
+
+                group.addEventListener('click', function () {
+                    switchEl.classList.toggle('active');
+                    const isActive = switchEl.classList.contains('active');
+                    localStorage.setItem(`privacy-${preference}`, isActive);
+                    
+                    // Optional: Send to backend
+                    console.log(`${preference}: ${isActive}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

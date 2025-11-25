@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | SkinCeuticels Skincare</title>
+    <style>
+        /* Full Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        :root {
+            --brand-blue: #4cbbdd;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background-color: var(--brand-blue);
+            color: #000000;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Header */
+        .header {
+            background-color: #000000;
+            padding: 20px 0;
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: block;
+            height: 50px;
+            width: auto;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            display: block;
+            margin-left: 44px;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #aaaaaa;
+        }
+
+        .top-links a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+        }
+
+        .top-links a:hover {
+            color: var(--brand-blue);
+        }
+
+        .cart-link {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background-color: var(--brand-blue);
+            color: #000000;
+            font-size: 10px;
+            font-weight: 700;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #aaaaaa;
+            flex: 1;
+            justify-content: center;
+            margin: 12px 0 8px;
+        }
+
+        .main-nav a {
+            transition: color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: var(--brand-blue);
+        }
+
+        .search-container {
+            position: relative;
+            width: 220px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 11px 40px 11px 15px;
+            border: 1px solid #333333;
+            border-radius: 4px;
+            background-color: #1a1a1a;
+            color: #aaaaaa;
+            font-size: 13px;
+            font-weight: 500;
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: #666666;
+        }
+
+        .search-input:focus {
+            border-color: var(--brand-blue);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaaaaa;
+            font-size: 17px;
+            padding: 5px;
+        }
+
+        .search-btn:hover {
+            color: var(--brand-blue);
+        }
+
+        @media (max-width: 1024px) {
+            .header-inner {
+                flex-direction: column;
+                padding: 0 20px;
+                gap: 12px;
+            }
+
+            .top-links {
+                order: 1;
+                width: 100%;
+                justify-content: center;
+                gap: 18px;
+            }
+
+            .logo {
+                order: 2;
+            }
+
+            .main-nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+                font-size: 13px;
+            }
+
+            .search-container {
+                order: 4;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-banner { font-size: 12px; }
+            .logo { height: 40px; }
+            .main-nav { gap: 12px; font-size: 12px; }
+            .top-links { gap: 12px; font-size: 12px; }
+        }
+
+        /* Hero */
+        .services-hero {
+            position: relative;
+            height: 45vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/heroser.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(42px, 7vw, 80px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        /* Section Layout */
+        .section {
+            padding: 100px 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #555555;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-bottom: 80px;
+        }
+
+        .col-left, .col-right {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .col-left img, .col-right img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .col-text {
+            padding: 20px 0;
+        }
+
+        .col-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #000000;
+        }
+
+        .col-desc {
+            font-size: 16px;
+            color: #444444;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .col-list {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .col-list li {
+            position: relative;
+            font-size: 15px;
+            color: #555555;
+            margin-bottom: 12px;
+            padding-left: 20px;
+        }
+
+        .col-list li::before {
+            content: "•";
+            color: var(--brand-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Full Width Image */
+        .full-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 60px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Quote */
+        .quote-block {
+            background-color: #f8f8f8;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 80px 0;
+            border-left: 6px solid var(--brand-blue);
+        }
+
+        .quote-text {
+            font-size: 24px;
+            font-style: italic;
+            color: #333333;
+            max-width: 900px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            font-size: 16px;
+            color: #666666;
+            font-weight: 500;
+        }
+
+        /* Grid Layout */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.06);
+        }
+
+        .service-info {
+            padding: 24px;
+        }
+
+        .service-name {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #000000;
+        }
+
+        .service-type {
+            font-size: 15px;
+            color: var(--brand-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .service-desc {
+            font-size: 15px;
+            color: #555555;
+            line-height: 1.7;
+        }
+
+        /* Final Section */
+        .final-section {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .final-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .final-desc {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .last-updated {
+            text-align: center;
+            font-size: 14px;
+            color: #999999;
+            margin: 60px 0 40px;
+            font-style: italic;
+        }
+
+        @media (max-width: 992px) {
+            .two-col {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .col-text {
+                padding: 0 20px;
+            }
+
+            .full-img {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .quote-block {
+                padding: 50px 20px;
+            }
+
+            .quote-text {
+                font-size: 20px;
+            }
+
+            .final-title {
+                font-size: 38px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        USE CODE: <b>SC501</b> For Your First Order And Get 10% Discount
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="/logo.png" alt="SkinCeuticels Skincare Logo">
+            </a>
+
+            <div class="top-links">
+                <a href="#"><span class="icon">$</span> US (EN)</a>
+                <a href="professionals.html"><span class="icon">Location</span> Find a Professional</a>
+                <a href="contact.html">Customer Service</a>
+                <a href="account.html">My Account</a>
+                <a href="cart.html" class="cart-link">
+                    <span class="icon">Cart</span> My Cart
+                    <span class="cart-count" id="cart-count-header">0</span>
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <a href="routine.html"><b>BUILD MY ROUTINE</b></a>
+                <a href="skincare.html"><b>SKINCARE</b></a>
+                <a href="bestsellers.html"><b>BEST SELLERS</b></a>
+                <a href="concerns.html"><b>SKIN CONCERNS</b></a>
+                <a href="learn.html"><b>LEARN</b></a>
+                <a href="services.html" class="active"><b>SERVICES</b></a>
+                <a href="about.html"><b>ABOUT US</b></a>
+                <a href="holiday.html" class="holiday-link">
+                    <span class="icon"><b>Gift</b></span> <b>HOLIDAY GIFT GUIDE</b>
+                </a>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button class="search-btn" aria-label="Search">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="services-hero">
+        <div class="hero-content">
+            <h1>Advanced Skincare Services</h1>
+            <p>Experience personalized, science-backed solutions through virtual consultations, routine builders, and in-office treatments with leading skincare professionals.</p>
+        </div>
+    </section>
+
+    <!-- Section 1: Virtual Consultation -->
+    <section class="section" style="background-color: #f8f8f8;">
+        <div class="container">
+            <h2 class="section-title">1:1 Virtual SkinConcierge</h2>
+            <p class="section-subtitle">Connect directly with a licensed aesthetician for expert guidance tailored to your unique skin concerns and goals.</p>
+
+            <div class="two-col">
+                <div class="col-left">
+                    <img src="/ser1.jpg" alt="Virtual Skin Consultation">
+                </div>
+                <div class="col-right">
+                    <div class="col-text">
+                        <h3 class="col-title">Personalized Video Sessions</h3>
+                        <p class="col-desc">Schedule a private 30-minute video call with a certified SkinCeuticels aesthetician. Discuss your current routine, address specific concerns, and receive professional recommendations backed by clinical research.</p>
+                        <ul class="col-list">
+                            <li>Live skin analysis using high-resolution imaging</li>
+                            <li>Custom product and regimen suggestions</li>
+                            <li>Integration with in-office treatment plans</li>
+                            <li>Follow-up notes and progress tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Image -->
+    <div class="container">
+        <img src="ser2.jpg" alt="Professional Consultation Room" class="full-img">
+    </div>
+
+    <!-- Section 2: Routine Builder -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Integrated Routine Builder</h2>
+            <p class="section-subtitle">Let our advanced algorithm and expert team design a complete daily regimen based on your skin type, lifestyle, and long-term goals.</p>
+
+            <div class="two-col" style="flex-direction: row-reverse;">
+                <div class="col-left">
+                    <img src="/ser3.jpg" alt="Custom Routine Builder">
+                </div>
+                <div class="col-right">
+                    <div class="col-text">
+                        <h3 class="col-title">Science-Driven Personalization</h3>
+                        <p class="col-desc">Answer a detailed questionnaire about your skin concerns, environment, diet, and habits. Our system combines your responses with clinical data to generate a step-by-step morning and evening routine.</p>
+                        <ul class="col-list">
+                            <li>Layering order optimization</li>
+                            <li>Seasonal and environmental adjustments</li>
+                            <li>Complementary in-office treatment pairing</li>
+                            <li>Progress checkpoints every 6 weeks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <div class="quote-block">
+        <p class="quote-text">“The virtual consultation transformed how I approach my skin. I finally understand why certain products work and how to layer them effectively.”</p>
+        <p class="quote-author">— Dr. Sarah Chen, Dermatologist Partner</p>
+    </div>
+
+    <!-- Section 3: In-Office Treatments -->
+    <section class="section" style="background-color: #f8f8f8;">
+        <div class="container">
+            <h2 class="section-title">Professional In-Office Treatments</h2>
+            <p class="section-subtitle">Visit one of our flagship clinics or authorized partners for advanced procedures that complement your at-home regimen.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/ser4.jpg" alt="Chemical Peel">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-name">Medical-Grade Chemical Peels</div>
+                        <div class="service-type">Exfoliation & Renewal</div>
+                        <p class="service-desc">Custom-formulated peels using high-potency acids to target texture, pigmentation, and acne scarring with minimal downtime.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/ser5.jpg" alt="Microneedling">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-name">RF Microneedling</div>
+                        <div class="service-type">Collagen Induction</div>
+                        <p class="service-desc">Combines micro-injuries with radiofrequency energy to stimulate collagen production and improve skin elasticity.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/ser6.jpg" alt="LED Therapy">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-name">LED Light Therapy</div>
+                        <div class="service-type">Cellular Repair</div>
+                        <p class="service-desc">Non-invasive light wavelengths to reduce inflammation, kill acne bacteria, and accelerate healing processes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Image -->
+    <div class="container">
+        <img src="/ser7.webp" alt="SkinCeuticels Clinic Interior" class="full-img">
+    </div>
+
+    <!-- Section 4: Find a Professional -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Locate a Skincare Professional</h2>
+            <p class="section-subtitle">Our global network includes dermatologists, aestheticians, and plastic surgeons trained in SkinCeuticels protocols.</p>
+
+            <div class="two-col">
+                <div class="col-left">
+                    <img src="/ser8.jpg" alt="Professional Locator Map">
+                </div>
+                <div class="col-right">
+                    <div class="col-text">
+                        <h3 class="col-title">Worldwide Clinical Network</h3>
+                        <p class="col-desc">With over 10,000 partnered clinics across 40 countries, expert care is always within reach. Each location follows standardized protocols developed in collaboration with leading medical researchers.</p>
+                        <ul class="col-list">
+                            <li>Board-certified dermatologists</li>
+                            <li>Trained aesthetic nurses</li>
+                            <li>Plastic surgery centers</li>
+                            <li>Medical spas with clinical oversight</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="final-section">
+        <div class="container">
+            <h2 class="final-title">Integrated Skincare, Elevated Results</h2>
+            <p class="final-desc">Whether you begin with a virtual consultation or step into one of our clinics, every service is designed to work in harmony with your daily SkinCeuticels regimen. Science guides the process. Results define the outcome.</p>
+        </div>
+    </section>
+
+    <p class="last-updated"></p>
+
+    <!-- Footer -->
+    <style>
+        .footer-container {
+            background-color: #1a1a1a;
+            padding: 60px 40px;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            color: #ffffff;
+            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .logo-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+        }
+
+        .logo-placeholder {
+            display: flex;
+            justify-content: left;
+        }
+
+        .logo-placeholder img {
+            width: 400px;
+            object-fit: contain;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-column h3 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column a {
+            color: #cccccc;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+        }
+
+        .signup-section {
+            grid-column: 7;
+            grid-row: 1 / 3;
+        }
+
+        .signup-section h3 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .required-text {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #444;
+            background-color: #ffffff;
+            color: #000;
+            font-size: 13px;
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 11px;
+            color: #cccccc;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+        }
+
+        .checkbox-text a {
+            color: #0099ff;
+            text-decoration: underline;
+        }
+
+        .signup-button {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ffffff;
+            background: transparent;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .signup-button:hover {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: #cccccc;
+        }
+
+        .contact-icon-img, .social-icon-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content { grid-template-columns: 1fr 1fr 1fr; }
+            .signup-section { grid-column: 1 / -1; }
+        }
+
+        @media (max-width: 768px) {
+            .main-content { grid-template-columns: 1fr 1fr; }
+            .footer-container { padding: 40px 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .main-content { grid-template-columns: 1fr; }
+        }
+    </style>
+    <div class="footer-container">
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                <img src="/logo.png" alt="Logo">
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="footer-column">
+                <h3>Skincare ></h3>
+                <ul>
+                    <li><a href="shop-skincare.html">Shop Skincare</a></li>
+                    <li><a href="shop-serums.html">Shop Serums</a></li>
+                    <li><a href="shop-routines.html">Shop Routines</a></li>
+                    <li><a href="shop-concern.html">Shop by Skin Concern</a></li>
+                    <li><a href="expert-advice.html">Expert Advice Articles</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>About Us ></h3>
+                <ul>
+                    <li><a href="philosophy.html">Our Integrated Skincare Philosophy</a></li>
+                    <li><a href="founder.html">Our Founder</a></li>
+                    <li><a href="partners.html">Our Pro Partners</a></li>
+                    <li><a href="science.html">Our Science</a></li>
+                    <li><a href="sustainability.html">Our Sustainability Goals</a></li>
+                    <li><a href="values.html">Our Values</a></li>
+                    <li><a href="employment.html">Employment Opportunities</a></li>
+                    <li><a href="professionals.html">For Professionals</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services ></h3>
+                <ul>
+                    <li><a href="live-chat.html">Live Chat with an Aesthetician</a></li>
+                    <li><a href="livestream.html">Livestream Shopping Event</a></li>
+                    <li><a href="consultation.html">Book a Private Online Consultation</a></li>
+                    <li><a href="treatments.html">Explore Professional Treatments</a></li>
+                    <li><a href="spa.html">Find an Advanced Clinical Spa</a></li>
+                    <li><a href="professional.html">Find a Skincare Professional</a></li>
+                </ul>
+            </div>
+
+            <div class="signup-section">
+                <h3>Sign Up</h3>
+                <p class="required-text">Required fields are marked with an (*).</p>
+                <div class="form-group">
+                    <input type="email" placeholder="Email*" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone" required>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" class="checkbox-text">
+                        By submitting this form, I agree to receive promotional messages. <a href="privacy.html">Privacy Policy</a>
+                    </label>
+                </div>
+                <button class="signup-button">Sign Up</button>
+
+                <div class="contact-options">
+                    <a href="live-chat.html" class="contact-item">
+                        <img src="/chatinnit.png" alt="Live Chat" class="contact-icon-img">
+                        <span>LIVE CHAT</span>
+                    </a>
+                    <a href="tel:1-800-771-9499" class="contact-item">
+                        <img src="/call.webp" alt="Phone" class="contact-icon-img">
+                        <span>1-800-771-9499</span>
+                    </a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/SkinCeuticals/" target="_blank">
+                        <img src="/fbini.jpg" alt="Facebook" class="social-icon-img">
+                    </a>
+                    <a href="https://x.com/SkinCeuticals" target="_blank">
+                        <img src="/xinni.png" alt="Twitter" class="social-icon-img">
+                    </a>
+                    <a href="https://www.pinterest.com/skinceuticals/" target="_blank">
+                        <img src="/pinini.png" alt="Pinterest" class="social-icon-img">
+                    </a>
+                    <a href="https://www.instagram.com/skinceuticals/" target="_blank">
+                        <img src="/insta inni.jpg" alt="Instagram" class="social-icon-img">
+                    </a>
+                    <a href="https://www.youtube.com/user/skinceuticals" target="_blank">
+                        <img src="/ytini.png" alt="YouTube" class="social-icon-img">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>My Account ></h3>
+                <ul>
+                    <li><a href="order-status.html">Order Status</a></li>
+                    <li><a href="auto-replenishment.html">Manage Auto-Replenishment</a></li>
+                    <li><a href="gift-cards.html">E-Gift Cards</a></li>
+                    <li><a href="rewards.html">Join SkinCeuticals Rewards</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Help ></h3>
+                <ul>
+                    <li><a href="customer-service.html">Customer Service</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="retailers.html">Authorized Retailers</a></li>
+                    <li><a href="afterpay.html">Afterpay</a></li>
+                    <li><a href="health-data.html">Consumer Health Data Notice</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Resources ></h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                    <li><a href="preferences.html">Online Preferences</a></li>
+                    <li><a href="choices.html">Ad Choices</a></li>
+                    <li><a href="ugc.html">User Generated Content Permission Terms</a></li>
+                    <li><a href="accessibility.html">Accessibility Statement</a></li>
+                    <li><a href="privacy-choices.html">Your Privacy Choices</a></li>
+                    <li><a href="notice-collection.html">Notice At Collection</a></li>
+                    <li><a href="health-data.html">Consumer Health Data Notice</a></li>
+                    <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    <li><a href="privacy-requests.html">Privacy Requests</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cart Count Sync
+        document.addEventListener('DOMContentLoaded', function () {
+            const cartCountHeader = document.getElementById('cart-count-header');
+            const cart = JSON.parse(localStorage.getItem('skinceuticels-cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountHeader.textContent = totalItems;
+        });
+    </script>
+</body>
+</html>
