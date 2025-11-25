@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Sellers | SkinCeuticels Skincare</title>
+    <link rel="stylesheet" href="premium-animations.css">
+    <style>
+        /* Full Reset & Variables */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        a, button {
+            text-decoration: none;
+            color: inherit;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        :root {
+            --brand-blue: #4cbbdd;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --text-muted: #999999;
+            --bg-light: #f8f8f8;
+            --radius: 12px;
+            --gap-sm: 12px;
+            --gap-md: 20px;
+            --gap-lg: 32px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background-color: var(--brand-blue);
+            color: #000000;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 13px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .top-banner a {
+            color: #000000;
+            text-decoration: underline;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+
+        .close-banner {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            font-weight: 300;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Header */
+        .header {
+            background-color: #000000;
+            padding: 20px 0;
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            margin-left: 44px;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #aaaaaa;
+        }
+
+        .top-links a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+        }
+
+        .top-links a:hover {
+            color: var(--brand-blue);
+        }
+
+        .cart-link {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background-color: var(--brand-blue);
+            color: #000000;
+            font-size: 10px;
+            font-weight: 700;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #aaaaaa;
+            flex: 1;
+            justify-content: center;
+            margin: 12px 0 8px;
+        }
+
+        .main-nav a {
+            transition: color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: var(--brand-blue);
+        }
+
+        .holiday-link {
+            color: var(--brand-blue) !important;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 220px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 11px 40px 11px 15px;
+            border: 1px solid #333333;
+            border-radius: 4px;
+            background-color: #1a1a1a;
+            color: #aaaaaa;
+            font-size: 13px;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input::placeholder {
+            color: #666666;
+        }
+
+        .search-input:focus {
+            border-color: var(--brand-blue);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaaaaa;
+            font-size: 17px;
+            padding: 5px;
+            transition: color 0.2s ease;
+        }
+
+        .search-btn:hover {
+            color: var(--brand-blue);
+        }
+
+        @media (max-width: 1024px) {
+            .header-inner {
+                flex-direction: column;
+                padding: 0 20px;
+                gap: 12px;
+            }
+
+            .top-links {
+                order: 1;
+                width: 100%;
+                justify-content: center;
+                gap: 18px;
+            }
+
+            .logo {
+                order: 2;
+            }
+
+            .main-nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+                font-size: 13px;
+            }
+
+            .search-container {
+                order: 4;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-banner { font-size: 12px; padding: 6px 0; }
+            .close-banner { right: 15px; font-size: 18px; }
+            .logo img { height: 40px; }
+            .main-nav { gap: 12px; font-size: 12px; }
+            .top-links { gap: 12px; font-size: 12px; }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 40vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/herobs.webp') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            color: #ffffff;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 900;
+            margin-bottom: 16px;
+            line-height: 1.1;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Filters Section */
+        .filters-section {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 30px;
+            text-align: center;
+        }
+
+        .filters-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: #f0f0f0;
+            color: var(--text-primary);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 9px 20px;
+            border-radius: 30px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* Products Grid */
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px 80px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--gap-lg);
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.05s; }
+        .product-card:nth-child(2) { animation-delay: 0.1s; }
+        .product-card:nth-child(3) { animation-delay: 0.15s; }
+        .product-card:nth-child(4) { animation-delay: 0.2s; }
+        .product-card:nth-child(5) { animation-delay: 0.25s; }
+        .product-card:nth-child(6) { animation-delay: 0.3s; }
+        .product-card:nth-child(7) { animation-delay: 0.35s; }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            background: var(--bg-light);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.08);
+            filter: brightness(1.05);
+        }
+
+        .bestseller-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--brand-blue);
+            color: #000000;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .product-category {
+            font-size: 12px;
+            color: var(--brand-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .product-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: auto;
+            font-size: 14px;
+            color: #ffd700;
+        }
+
+        .rating-count {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-left: 4px;
+        }
+
+        .add-to-cart {
+            background: #000000;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 12px;
+            border-radius: 4px;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .add-to-cart::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .add-to-cart:hover::before {
+            left: 100%;
+        }
+
+        .add-to-cart:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero { height: 50vh; }
+            .filters-section, .products-container { padding: 0 20px; }
+            .products-grid { gap: 24px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { height: 45vh; }
+            .hero h1 { font-size: 42px; }
+            .hero p { font-size: 17px; }
+            .category-filters { gap: 10px; }
+            .filter-btn { padding: 8px 16px; font-size: 12px; }
+            .product-image-container { height: 220px; }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid { grid-template-columns: 1fr; }
+            .product-image-container { height: 200px; }
+        }
+
+        /* Footer - Clean & Unified */
+        .footer-container {
+            background-color: #1a1a1a;
+            padding: 60px 40px 40px;
+            color: #ffffff;
+            margin-top: 80px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            margin-bottom: 40px;
+        }
+
+        .footer-logo img {
+            width: 320px;
+            height: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col a {
+            color: #cccccc;
+            font-size: 13px;
+            line-height: 2;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col a:hover {
+            color: #ffffff;
+        }
+
+        .signup-col {
+            grid-column: 7;
+            grid-row: 1 / 3;
+        }
+
+        .signup-form h3 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .required {
+            font-size: 12px;
+            color: #999999;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #444444;
+            background: #ffffff;
+            color: #000000;
+            font-size: 13px;
+            border-radius: 4px;
+        }
+
+        .form-group input::placeholder {
+            color: #999999;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            font-size: 11px;
+            color: #cccccc;
+            align-items: flex-start;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+            margin-top: 2px;
+        }
+
+        .checkbox-text a {
+            color: #4cbbdd;
+            text-decoration: underline;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .contact-social {
+            margin-top: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: #cccccc;
+        }
+
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        .social-icon:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 1200px) {
+            .footer-grid { 
+                grid-template-columns: 1fr 1fr 1fr; 
+            }
+            .signup-col { 
+                grid-column: 1 / -1; 
+                margin-top: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { 
+                grid-template-columns: 1fr 1fr; 
+            }
+            .footer-container { 
+                padding: 40px 20px; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .footer-logo img { 
+                width: 240px; 
+            }
+        }
+
+        /* EXPERT ADVICE - TEXT LEFT, 3 CARDS RIGHT - NO ARROWS */
+        :root {
+            --brand-blue: #4cbbdd;
+        }
+
+        .expert-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+        .expert-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .expert-content {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            text-align: left;
+        }
+        .expert-title {
+            font-size: 36px;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .expert-desc {
+            font-size: 18px;
+            font-weight: 300;
+            color: #666666;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        .expert-btn {
+            display: inline-block;
+            border: 1px solid #000000;
+            color: #000000;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 32px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .expert-btn:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .expert-grid {
+            flex: 2;
+            display: flex;
+            gap: 30px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .expert-card {
+            flex: 1;
+            min-width: 260px;
+            max-width: 340px;
+            text-align: left;
+        }
+        .expert-image {
+            height: 240px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        .expert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .expert-category {
+            font-size: 13px;
+            font-weight: 600;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .expert-article-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .expert-link {
+            font-size: 14px;
+            font-weight: 500;
+            color: #000000;
+            text-decoration: none;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+        .expert-link:hover {
+            color: var(--brand-blue);
+            border-color: var(--brand-blue);
+        }
+        @media (max-width: 992px) {
+            .expert-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .expert-content {
+                max-width: 600px;
+            }
+            .expert-grid {
+                justify-content: center;
+                gap: 24px;
+            }
+            .expert-card {
+                max-width: 300px;
+            }
+        }
+        @media (max-width: 768px) {
+            .expert-section {
+                padding: 60px 0;
+            }
+            .expert-container {
+                padding: 0 20px;
+            }
+            .expert-title {
+                font-size: 30px;
+            }
+            .expert-desc {
+                font-size: 14px;
+            }
+            .expert-btn {
+                padding: 10px 28px;
+                font-size: 12px;
+            }
+            .expert-image {
+                height: 200px;
+            }
+            .expert-article-title {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        USE CODE: <b>SC501</b> For Your First Order And Get 10% Discount
+        <span class="close-banner" onclick="this.parentElement.style.display='none'">×</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="/logo.png" alt="SkinCeuticels Skincare Logo">
+            </a>
+
+            <div class="top-links">
+                <a href="#"><span class="icon">$</span> US (EN)</a>
+                <a href="professionals.html"><span class="icon">Location</span> Find a Professional</a>
+                <a href="contact.html">Customer Service</a>
+                <a href="account.html">My Account</a>
+                <a href="cart.html" class="cart-link">
+                    <span class="icon">Cart</span> My Cart
+                    <span class="cart-count" id="cart-count-header">0</span>
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <a href="routine.html"><b>BUILD MY ROUTINE</b></a>
+                <a href="skincare.html"><b>SKINCARE</b></a>
+                <a href="bestsellers.html" class="active"><b>BEST SELLERS</b></a>
+                <a href="concerns.html"><b>SKIN CONCERNS</b></a>
+                <a href="learn.html"><b>LEARN</b></a>
+                <a href="services.html"><b>SERVICES</b></a>
+                <a href="about.html"><b>ABOUT US</b></a>
+                <a href="holiday.html" class="holiday-link">
+                    <span class="icon"><b>Gift</b></span> <b>HOLIDAY GIFT GUIDE</b>
+                </a>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button class="search-btn" aria-label="Search">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Best Sellers</h1>
+            <p>Discover our most-loved products, backed by science and trusted by skincare professionals worldwide.</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <div class="filters-section">
+        <div class="filters-title">Filter by Category</div>
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="serum">Serums</button>
+            <button class="filter-btn" data-category="moisturizer">Moisturizers</button>
+            <button class="filter-btn" data-category="cleanser">Cleansers</button>
+            <button class="filter-btn" data-category="sunscreen">Sunscreen</button>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-container">
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <a href="pdp.html" class="product-card" data-categories="serum">
+                <div class="product-image-container">
+                    <span class="bestseller-badge">#1 Best Seller</span>
+                    <img src="/m1.jpg" alt="C E Ferulic" class="product-image">
+                </div>
+                <div class="product-info">
+                    <!-- Updated product category, name, price, and description to match image -->
+                    <div class="product-category">SERUMS, VITAMIN C SERUMS</div>
+                    <div class="product-name">C E Ferulic® with 15% L-Ascorbic Acid</div>
+                    <div class="product-price">$135.00</div>
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <span class="rating-count">(9,538)</span>
+                    </div>
+                    <button class="add-to-cart" onclick="event.preventDefault(); event.stopPropagation(); addProductToCart('ce-ferulic', 'C E Ferulic® with 15% L-Ascorbic Acid', 135, '/m1.jpg', 'Vitamin C Serums')">
+                        Add to Cart
+                    </button>
+                </div>
+            </a>
+
+            <!-- Product 2 -->
+            <a href="product-hyaluronic-intensifier.html" class="product-card" data-categories="serum">
+                <div class="product-image-container">
+                    <img src="/m2.jpg" alt="SkinCeuticals H.A Intensifier Set" class="product-image">
+                </div>
+                <div class="product-info">
+                    <!-- Updated product name, price, and category to SkinCeuticals H.A Intensifier Set -->
+                    <div class="product-category">UNCATEGORIZED</div>
+                    <div class="product-name">SkinCeuticals - H.A Intensifier Set – 4ml x 10pcs</div>
+                    <div class="product-price">$60.00</div>
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <span class="rating-count">(892)</span>
+                    </div>
+                    <button class="add-to-cart" onclick="event.preventDefault(); event.stopPropagation(); addProductToCart('ha-intensifier-set', 'SkinCeuticals - H.A Intensifier Set – 4ml x 10pcs', 60, '/m2.jpg', 'Skincare Sets')">
+                        Add to Cart
+                    </button>
+                </div>
+            </a>
+
+            <!-- Product 3 -->
+            <a href="product-advanced-rgn6.html" class="product-card" data-categories="moisturizer">
+                <div class="product-image-container">
+                    <img src="/m5.webp" alt="Advanced RGN-6" class="product-image">
+                </div>
+                <div class="product-info">
+                    <!-- Updated product category and price -->
+                    <div class="product-category">ANTI-AGING CREAMS, SERUMS</div>
+                    <div class="product-name">Advanced RGN-6 50ml</div>
+                    <div class="product-price">$195.00</div>
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <span class="rating-count">(756)</span>
+                    </div>
+                    <button class="add-to-cart" onclick="event.preventDefault(); event.stopPropagation(); addProductToCart('advanced-rgn6', 'Advanced RGN-6 50ml', 195, '/m5.webp', 'Anti-Aging Creams')">
+                        Add to Cart
+                    </button>
+                </div>
+            </a>
+
+            <!-- Product 4 -->
+            <a href="product-age-interpreter.html" class="product-card" data-categories="serum">
+                <div class="product-image-container">
+                    <img src="/m3.webp" alt="A.G.E. Interpreter" class="product-image">
+                </div>
+                <div class="product-info">
+                    <!-- Updated product category, name, and price -->
+                    <div class="product-category">UNCATEGORIZED</div>
+                    <div class="product-name">A.G.E. Interrupter Ultra Serum</div>
+                    <div class="product-price">$170.00</div>
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <span class="rating-count">(1,102)</span>
+                    </div>
+                    <button class="add-to-cart" onclick="event.preventDefault(); event.stopPropagation(); addProductToCart('age-interpreter', 'A.G.E. Interrupter Ultra Serum', 170, '/m3.webp', 'Serums')">
+                        Add to Cart
+                    </button>
+                </div>
+            </a>
+
+            <!-- Product 5 -->
+            <a href="product-age-eye.html" class="product-card" data-categories="serum">
+                <div class="product-image-container">
+                    <img src="/m6.webp" alt="A.G.E. Eye" class="product-image">
+                </div>
+                <div class="product-info">
+                    <!-- Updated product category and price -->
+                    <div class="product-category">ANTI-AGING CREAMS, SKINCARE</div>
+                    <div class="product-name">A.G.E. Advanced Eye for Dark Circles 15ml</div>
+                    <div class="product-price">$116.00</div>
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <span class="rating-count">(934)</span>
+                    </div>
+                    <button class="add-to-cart" onclick="event.preventDefault(); event.stopPropagation(); addProductToCart('age-eye', 'A.G.E. Advanced Eye for Dark Circles 15ml', 116, '/m6.webp', 'Skincare Sets')">
+                        Add to Cart
+                    </button>
+                </div>
+            </a>
+
+            <!-- Product 6 -->
+            <a href="product-ptiox.html" class="product-card" data-categories="serum">
+                <div class="product-image-container">
+                    <img src="/m7.webp" alt="P-TIOX" class="product-image">
+                </div>
+                <div class="product-info">
+                    <!-- Updated product price -->
+                    <div class="product-category">Serum</div>
+                    <div class="product-name">P-TIOX 30ml</div>
+                    <div class="product-price">$140.00</div>
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <span class="rating-count">(678)</span>
+                    </div>
+                    <button class="add-to-cart" onclick="event.preventDefault(); event.stopPropagation(); addProductToCart('ptiox', 'P-TIOX 30ml', 140, '/m7.webp', 'Skincare Sets')">
+                        Add to Cart
+                    </button>
+                </div>
+            </a>
+
+            <!-- Product 7 -->
+            <a href="product-discovery-set.html" class="product-card" data-categories="moisturizer">
+                <div class="product-image-container">
+                    <img src="/m8.jpg" alt="Discovery Set" class="product-image">
+                </div>
+                <div class="product-info">
+                    <!-- Updated product category and price -->
+                    <div class="product-category">BUNDLE</div>
+                    <div class="product-name">Best Sellers Discovery Set</div>
+                    <div class="product-price">$400.00</div>
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <span class="rating-count">(14,718)</span>
+                    </div>
+                    <button class="add-to-cart" onclick="event.preventDefault(); event.stopPropagation(); addProductToCart('discovery-set', 'Best Sellers Discovery Set', 400, '/m8.jpg', 'Skincare')">
+                        Add to Cart
+                    </button>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+
+    <section class="expert-section">
+        <div class="expert-container">
+            
+            <div class="expert-content">
+                <h2 class="expert-title">Expert Advice</h2>
+                <p class="expert-desc">
+                    Explore recommendations, procedures, and skin science education from trusted professionals.
+                </p>
+                <a href="articles.html" class="expert-btn">EXPLORE ARTICLES</a>
+            </div>
+
+            
+            <div class="expert-grid">
+                <!-- Card 1 -->
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="ar1.webp" alt="Antioxidant Serum">
+                    </div>
+                    <div class="expert-category">PRODUCT GUIDES</div>
+                    <h3 class="expert-article-title">Which Antioxidant Serum is the Best Option for You?</h3>
+                    <a href="antioxidant.html" class="expert-link">READ MORE</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="/ar2.webp" alt="Environmental Stressors">
+                    </div>
+                    <div class="expert-category">SKIN SCIENCE</div>
+                    <h3 class="expert-article-title">What are Environmental Stressors and Aggressors?</h3>
+                    <a href="stressors.html" class="expert-link">READ MORE</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="/ar3.webp" alt="Fine Lines">
+                    </div>
+                    <div class="expert-category">PHYSICIAN ADVICE</div>
+                    <h3 class="expert-article-title">What Causes Fine Lines and Wrinkles?</h3>
+                    <a href="wrinkles.html" class="expert-link">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="/logo.png" alt="SkinCeuticels Logo">
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Skincare</h3>
+                    <ul>
+                        <li><a href="#">Shop Skincare</a></li>
+                        <li><a href="#">Shop Serums</a></li>
+                        <li><a href="#">Shop Routines</a></li>
+                        <li><a href="#">Shop by Concern</a></li>
+                        <li><a href="#">Expert Advice</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#">Philosophy</a></li>
+                        <li><a href="#">Founder</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Live Chat</a></li>
+                        <li><a href="#">Consultation</a></li>
+                        <li><a href="#">Find a Pro</a></li>
+                        <li><a href="#">Treatments</a></li>
+                        <li><a href="#">Spa Locator</a></li>
+                    </ul>
+                </div>
+
+                <div class="signup-col">
+                    <div class="signup-form">
+                        <h3>Sign Up</h3>
+                        <p class="required">Required fields marked (*)</p>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone">
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms" class="checkbox-text">
+                                I agree to receive promotional messages. <a href="#">Privacy Policy</a>
+                            </label>
+                        </div>
+                        <button class="signup-btn">Sign Up</button>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="#" class="contact-item">
+                            <img src="/chatinnit.png" alt="Chat" class="contact-icon">
+                            <span>LIVE CHAT</span>
+                        </a>
+                        <a href="tel:18007719499" class="contact-item">
+                            <img src="/call.webp" alt="Call" class="contact-icon">
+                            <span>1-800-771-9499</span>
+                        </a>
+
+                        <div class="social-links">
+                            <a href="#"><img src="/fbini.jpg" alt="FB" class="social-icon"></a>
+                            <a href="#"><img src="/xinni.png" alt="X" class="social-icon"></a>
+                            <a href="#"><img src="/pinini.png" alt="Pinterest" class="social-icon"></a>
+                            <a href="#"><img src="/insta inni.jpg" alt="IG" class="social-icon"></a>
+                            <a href="#"><img src="/ytini.png" alt="YT" class="social-icon"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>My Account</h3>
+                    <ul>
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Auto-Replenish</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                        <li><a href="#">Rewards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Retailers</a></li>
+                        <li><a href="#">Afterpay</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Your Choices</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cart System
+        const appCart = {
+            addProduct(product) {
+                let cart = JSON.parse(localStorage.getItem('skinceuticels-cart') || '[]');
+                const existing = cart.find(p => p.id === product.id);
+                if (existing) {
+                    existing.quantity += 1;
+                } else {
+                    cart.push(product);
+                }
+                localStorage.setItem('skinceuticels-cart', JSON.stringify(cart));
+                this.updateCartUI();
+            },
+            updateCartUI() {
+                const count = document.getElementById('cart-count-header');
+                const cart = JSON.parse(localStorage.getItem('skinceuticels-cart') || '[]');
+                const total = cart.reduce((sum, p) => sum + p.quantity, 0);
+                count.textContent = total;
+            }
+        };
+
+        // Category Filter
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('data-category');
+                    productCards.forEach(card => {
+                        const categories = card.getAttribute('data-categories').split(' ');
+                        card.style.display = (category === 'all' || categories.includes(category)) ? 'flex' : 'none';
+                    });
+                });
+            });
+
+            // Initial cart update
+            appCart.updateCartUI();
+        });
+
+        // Global add to cart function
+        function addProductToCart(id, name, price, image, category) {
+            appCart.addProduct({ id, name, price, image, category, quantity: 1 });
+        }
+    </script>
+</body>
+</html>
